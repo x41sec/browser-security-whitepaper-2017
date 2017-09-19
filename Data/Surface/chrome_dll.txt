@@ -1,0 +1,427 @@
+
+Listdlls v3.2 - Listdlls
+Copyright (C) 1997-2016 Mark Russinovich
+Sysinternals
+
+------------------------------------------------------------------------------
+chrome.exe pid: 5376
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" 
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x00000000314e0000  0x59000   C:\Windows\System32\sechost.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002ee70000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x00000000fd920000  0x307c000  C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome.dll
+0x000000002eb70000  0x56000   C:\Windows\System32\WINTRUST.dll
+0x000000002db70000  0x11000   C:\Windows\System32\MSASN1.dll
+0x000000002e5e0000  0x1c9000  C:\Windows\System32\CRYPT32.dll
+0x000000001bb90000  0x6b000   C:\Windows\SYSTEM32\OLEACC.dll
+0x0000000024200000  0x267000  C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.0_none_108e4f62dfe5d999\COMCTL32.dll
+0x000000002c8c0000  0xd000    C:\Windows\SYSTEM32\HID.DLL
+0x0000000020980000  0x1a9000  C:\Windows\SYSTEM32\dbghelp.dll
+0x0000000025750000  0x19000   C:\Windows\SYSTEM32\USP10.dll
+0x0000000028aa0000  0x10000   C:\Windows\SYSTEM32\credui.dll
+0x0000000024c80000  0x17000   C:\Windows\SYSTEM32\NETAPI32.dll
+0x000000002d610000  0x25000   C:\Windows\SYSTEM32\ncrypt.dll
+0x0000000024a90000  0xc000    C:\Windows\SYSTEM32\Secur32.dll
+0x0000000026350000  0x2c0000  C:\Windows\SYSTEM32\DWrite.dll
+0x000000002aa60000  0x13000   C:\Windows\SYSTEM32\WTSAPI32.dll
+0x000000002af00000  0x2df000  C:\Windows\SYSTEM32\d3d11.dll
+0x000000002c900000  0xa4000   C:\Windows\SYSTEM32\dxgi.dll
+0x0000000029520000  0x60000   C:\Windows\SYSTEM32\wevtapi.dll
+0x000000002d9b0000  0x25000   C:\Windows\SYSTEM32\bcrypt.dll
+0x000000002d5d0000  0x36000   C:\Windows\SYSTEM32\NTASN1.dll
+0x0000000024bb0000  0x18000   C:\Windows\SYSTEM32\SAMCLI.DLL
+0x000000002d220000  0xd000    C:\Windows\SYSTEM32\NETUTILS.DLL
+0x000000002cde0000  0x31000   C:\Windows\SYSTEM32\ntmarta.dll
+0x000000002c2e0000  0x95000   C:\Windows\system32\uxtheme.dll
+0x0000000030b90000  0x6c000   C:\Windows\System32\WS2_32.dll
+0x000000002aa90000  0x2a000   C:\Windows\system32\dwmapi.dll
+0x0000000031170000  0x166000  C:\Windows\System32\MSCTF.dll
+0x000000002a8d0000  0x18000   C:\Windows\system32\NLAapi.dll
+0x000000002d130000  0x37000   C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x0000000030ca0000  0x8000    C:\Windows\System32\NSI.dll
+0x0000000029500000  0x16000   C:\Windows\SYSTEM32\wkscli.dll
+0x00000000284d0000  0x16000   C:\Windows\SYSTEM32\dhcpcsvc6.DLL
+0x00000000284b0000  0x1a000   C:\Windows\SYSTEM32\dhcpcsvc.DLL
+0x000000002c8d0000  0x22000   C:\Windows\SYSTEM32\gpapi.dll
+0x0000000030750000  0x43b000  C:\Windows\System32\SETUPAPI.dll
+0x000000002c4f0000  0x28000   C:\Windows\SYSTEM32\DEVOBJ.dll
+0x0000000026850000  0x68000   C:\Windows\system32\wlanapi.dll
+0x00000000260a0000  0x105000  C:\Windows\system32\audioses.dll
+0x000000002a1e0000  0x139000  C:\Windows\SYSTEM32\wintypes.dll
+0x0000000026a80000  0x67000   C:\Windows\system32\MMDevAPI.DLL
+0x000000002a6f0000  0xb000    C:\Windows\system32\AVRT.dll
+0x000000002b2f0000  0x196000  C:\Windows\system32\PROPSYS.dll
+0x00000000306a0000  0x9e000   C:\Windows\System32\clbcatq.dll
+0x000000002cb80000  0x88000   C:\Windows\System32\FirewallAPI.dll
+0x000000002cb50000  0x2b000   C:\Windows\System32\fwbase.dll
+0x000000002d390000  0x5c000   C:\Windows\system32\mswsock.dll
+0x000000002d170000  0xa4000   C:\Windows\SYSTEM32\DNSAPI.dll
+0x0000000024a20000  0x39000   C:\Windows\System32\FWPolicyIOMgr.dll
+0x0000000025570000  0x6b000   C:\Windows\System32\fwpuclnt.dll
+0x0000000024fa0000  0xa000    C:\Windows\System32\rasadhlp.dll
+0x000000002d890000  0x55000   C:\Windows\SYSTEM32\WINSTA.dll
+0x0000000025b00000  0x88000   C:\Windows\system32\directmanipulation.dll
+0x000000001bae0000  0x47000   C:\Windows\system32\dataexchange.dll
+0x000000002bac0000  0x122000  C:\Windows\system32\dcomp.dll
+0x000000002c520000  0x170000  C:\Windows\system32\twinapi.appcore.dll
+0x000000001c210000  0x82000   C:\Windows\system32\twinapi.dll
+0x00000000287f0000  0x82000   C:\Windows\system32\TextInputFramework.dll
+0x000000002a320000  0x2d2000  C:\Windows\system32\CoreUIComponents.dll
+0x000000002b1e0000  0xe3000   C:\Windows\system32\CoreMessaging.dll
+0x000000002a100000  0x15000   C:\Windows\SYSTEM32\usermgrcli.dll
+0x0000000013dd0000  0xb000    C:\Windows\SYSTEM32\atlthunk.dll
+0x0000000019630000  0x93000   C:\Windows\SYSTEM32\mscms.dll
+0x000000001a960000  0x482000  C:\Windows\system32\explorerframe.dll
+0x000000002d530000  0x17000   C:\Windows\System32\CRYPTSP.dll
+0x000000002cfb0000  0x34000   C:\Windows\system32\rsaenh.dll
+0x000000001ded0000  0x2f000   C:\Windows\SYSTEM32\cryptnet.dll
+0x00000000284f0000  0xb000    C:\Windows\SYSTEM32\WINNSI.DLL
+0x000000002cff0000  0xa000    C:\Windows\System32\DPAPI.dll
+0x000000001c080000  0x10000   C:\Windows\SYSTEM32\LINKINFO.dll
+0x0000000019e70000  0xd6000   C:\Windows\SYSTEM32\ntshrui.dll
+0x000000001f730000  0x26000   C:\Windows\SYSTEM32\srvcli.dll
+0x0000000024a70000  0x12000   C:\Windows\SYSTEM32\cscapi.dll
+0x0000000028350000  0x76000   C:\Windows\SYSTEM32\policymanager.dll
+0x00000000282c0000  0x8f000   C:\Windows\SYSTEM32\msvcp110_win.dll
+------------------------------------------------------------------------------
+chrome.exe pid: 4356
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=crashpad-handler /prefetch:7 --monitor-self-annotation=ptype=crashpad-handler "--database=C:\Users\IEUser\AppData\Local\Google\Chrome\User Data\Crashpad" "--metrics-dir=C:\Users\IEUser\AppData\Local\Google\Chrome\User Data" --url=https://clients2.google.com/cr/report --annotation=channel= --annotation=plat=Win64 --annotation=prod=Chrome --annotation=ver=59.0.3071.86 --initial-client-data=0x1dc,0x1e0,0x1e4,0x1d8,0x1e8,0x7ffb1d8c19c8,0x7ffb1d8c1a08,0x7ffb1d8c19e0
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x00000000314e0000  0x59000   C:\Windows\System32\sechost.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002ee70000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x000000002c2e0000  0x95000   C:\Windows\system32\uxtheme.dll
+0x0000000031170000  0x166000  C:\Windows\System32\MSCTF.dll
+0x000000002aa90000  0x2a000   C:\Windows\system32\dwmapi.dll
+------------------------------------------------------------------------------
+chrome.exe pid: 5648
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=watcher --main-thread-id=3204 --on-initialized-event-handle=628 --parent-handle=632 /prefetch:6
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x00000000314e0000  0x59000   C:\Windows\System32\sechost.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002ee70000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x0000000005de0000  0xa3000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_watcher.dll
+0x000000002c2e0000  0x95000   C:\Windows\system32\uxtheme.dll
+0x000000002aa90000  0x2a000   C:\Windows\system32\dwmapi.dll
+0x0000000031170000  0x166000  C:\Windows\System32\MSCTF.dll
+------------------------------------------------------------------------------
+chrome.exe pid: 7072
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=gpu-process --field-trial-handle=1348 --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,10,20,24,43,76 --disable-gl-extensions="GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent" --gpu-vendor-id=0x1b36 --gpu-device-id=0x0100 --gpu-driver-vendor="Red Hat, Inc." --gpu-driver-version=22.33.46.473 --gpu-driver-date=7-28-2015 --service-request-channel-token=93F9336C434C6B67319BC7619BFE4B3E --mojo-platform-channel-handle=1360 --ignored=" --type=renderer " /prefetch:2
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002ee70000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x00000000d70f0000  0x59000   C:\Windows\System32\sechost.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x00000000f9cf0000  0x3c2e000  C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_child.dll
+0x0000000030b90000  0x6c000   C:\Windows\System32\WS2_32.dll
+0x0000000030440000  0x108000  C:\Windows\System32\COMDLG32.dll
+0x000000002e5e0000  0x1c9000  C:\Windows\System32\CRYPT32.dll
+0x000000002db70000  0x11000   C:\Windows\System32\MSASN1.dll
+0x000000002eb70000  0x56000   C:\Windows\System32\WINTRUST.dll
+0x0000000024200000  0x267000  C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.0_none_108e4f62dfe5d999\COMCTL32.dll
+0x0000000020980000  0x1a9000  C:\Windows\SYSTEM32\dbghelp.dll
+0x0000000025750000  0x19000   C:\Windows\SYSTEM32\USP10.dll
+0x0000000021a10000  0x8a000   C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x0000000026350000  0x2c0000  C:\Windows\SYSTEM32\DWrite.dll
+0x000000002d130000  0x37000   C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x0000000024a90000  0xc000    C:\Windows\SYSTEM32\Secur32.dll
+0x0000000026b90000  0x1c8000  C:\Windows\SYSTEM32\urlmon.dll
+0x000000002d9b0000  0x25000   C:\Windows\SYSTEM32\bcrypt.dll
+0x0000000026f10000  0x286000  C:\Windows\SYSTEM32\iertutil.dll
+0x00000000255f0000  0x8f000   C:\Windows\SYSTEM32\mf.dll
+0x0000000020b60000  0x1a0000  C:\Windows\SYSTEM32\MFPlat.DLL
+0x0000000020d00000  0x32000   C:\Windows\SYSTEM32\RTWorkQ.DLL
+0x0000000004c90000  0x248000  C:\Windows\SYSTEM32\msmpeg2vdec.dll
+0x0000000004b60000  0x12b000  C:\Windows\SYSTEM32\mfperfhelper.dll
+0x000000002d530000  0x17000   C:\Windows\SYSTEM32\cryptsp.dll
+0x0000000021100000  0x22000   C:\Windows\SYSTEM32\dxva2.dll
+0x0000000005cf0000  0xeb000   C:\Windows\SYSTEM32\msvproc.dll
+0x000000002aac0000  0x43e000  C:\Windows\SYSTEM32\D3DCompiler_47.dll
+0x00000000047b0000  0x3ad000  C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\libglesv2.dll
+0x0000000004620000  0x189000  C:\Windows\SYSTEM32\d3d9.dll
+0x000000002aa90000  0x2a000   C:\Windows\SYSTEM32\dwmapi.dll
+0x0000000025730000  0x1c000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\libegl.dll
+0x000000002c900000  0xa4000   C:\Windows\SYSTEM32\dxgi.dll
+0x000000002af00000  0x2df000  C:\Windows\SYSTEM32\d3d11.dll
+0x000000002bac0000  0x122000  C:\Windows\SYSTEM32\dcomp.dll
+0x0000000029c40000  0x2d5000  C:\Windows\SYSTEM32\d3d10warp.dll
+0x000000002c2e0000  0x95000   C:\Windows\system32\uxtheme.dll
+0x00000000214e0000  0x13000   C:\Windows\SYSTEM32\CompPkgSup.DLL
+0x00000000306a0000  0x9e000   C:\Windows\System32\clbcatq.dll
+0x000000002a1e0000  0x139000  C:\Windows\System32\WinTypes.dll
+0x00000000f9ac0000  0x225000  C:\Windows\System32\mfh264enc.dll
+0x0000000031170000  0x166000  C:\Windows\System32\MSCTF.dll
+------------------------------------------------------------------------------
+chrome.exe pid: 5360
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=renderer --field-trial-handle=1348 --primordial-pipe-token=C87D211DD1602242A3F27EC3D81C5FCF --lang=en-US --instant-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --device-scale-factor=1 --num-raster-threads=1 --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;0,16,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;1,16,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;2,16,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;3,16,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553;4,16,3553 --service-request-channel-token=C87D211DD1602242A3F27EC3D81C5FCF --renderer-client-id=5 --mojo-platform-channel-handle=2436 /prefetch:1
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x00000000f7230000  0x59000   C:\Windows\System32\sechost.dll
+0x00000000f7290000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x00000000f9cf0000  0x3c2e000  C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_child.dll
+0x0000000030b90000  0x6c000   C:\Windows\System32\WS2_32.dll
+0x0000000030440000  0x108000  C:\Windows\System32\COMDLG32.dll
+0x000000002e5e0000  0x1c9000  C:\Windows\System32\CRYPT32.dll
+0x000000002db70000  0x11000   C:\Windows\System32\MSASN1.dll
+0x000000002eb70000  0x56000   C:\Windows\System32\WINTRUST.dll
+0x0000000024200000  0x267000  C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.0_none_108e4f62dfe5d999\COMCTL32.dll
+0x0000000020980000  0x1a9000  C:\Windows\SYSTEM32\dbghelp.dll
+0x0000000025750000  0x19000   C:\Windows\SYSTEM32\USP10.dll
+0x0000000021a10000  0x8a000   C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x0000000026350000  0x2c0000  C:\Windows\SYSTEM32\DWrite.dll
+0x000000002d130000  0x37000   C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x0000000024a90000  0xc000    C:\Windows\SYSTEM32\Secur32.dll
+0x0000000026b90000  0x1c8000  C:\Windows\SYSTEM32\urlmon.dll
+0x000000002d9b0000  0x25000   C:\Windows\SYSTEM32\bcrypt.dll
+0x0000000026f10000  0x286000  C:\Windows\SYSTEM32\iertutil.dll
+------------------------------------------------------------------------------
+chrome.exe pid: 3084
+Command line: "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" --type=renderer --field-trial-handle=1348 --primordial-pipe-token=FF615F9EDA8C7E3F1907B5252BB774BB --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --device-scale-factor=1 --num-raster-threads=1 --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;0,16,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;1,16,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;2,16,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;3,16,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553;4,16,3553 --service-request-channel-token=FF615F9EDA8C7E3F1907B5252BB774BB --renderer-client-id=3 --mojo-platform-channel-handle=2660 /prefetch:1
+
+Base                Size      Path
+0x0000000017090000  0x12d000  C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+0x0000000031670000  0x1db000  C:\Windows\SYSTEM32\ntdll.dll
+0x0000000031430000  0xae000   C:\Windows\System32\KERNEL32.DLL
+0x000000002dc90000  0x249000  C:\Windows\System32\KERNELBASE.dll
+0x000000002c100000  0x7e000   C:\Windows\SYSTEM32\apphelp.dll
+0x0000000025770000  0x57000   C:\Windows\AppPatch\AppPatch64\AcGenral.dll
+0x0000000030c00000  0x9d000   C:\Windows\System32\msvcrt.dll
+0x0000000031600000  0x51000   C:\Windows\System32\SHLWAPI.dll
+0x0000000030e50000  0x2f9000  C:\Windows\System32\combase.dll
+0x000000002db90000  0xf6000   C:\Windows\System32\ucrtbase.dll
+0x000000002ebd0000  0x125000  C:\Windows\System32\RPCRT4.dll
+0x000000002e9e0000  0x6a000   C:\Windows\System32\bcryptPrimitives.dll
+0x000000002ee40000  0x27000   C:\Windows\System32\GDI32.dll
+0x000000002e850000  0x189000  C:\Windows\System32\gdi32full.dll
+0x000000002e7b0000  0x9a000   C:\Windows\System32\msvcp_win.dll
+0x00000000312e0000  0x14a000  C:\Windows\System32\USER32.dll
+0x000000002eb00000  0x1e000   C:\Windows\System32\win32u.dll
+0x0000000030550000  0x145000  C:\Windows\System32\ole32.dll
+0x000000002ef50000  0x1437000  C:\Windows\System32\SHELL32.dll
+0x000000002eb20000  0x49000   C:\Windows\System32\cfgmgr32.dll
+0x0000000030390000  0xaa000   C:\Windows\System32\shcore.dll
+0x000000002dee0000  0x6f2000  C:\Windows\System32\windows.storage.dll
+0x000000002dae0000  0x11000   C:\Windows\System32\kernel.appcore.dll
+0x000000002db20000  0x4c000   C:\Windows\System32\powrprof.dll
+0x000000002db00000  0x15000   C:\Windows\System32\profapi.dll
+0x000000002da10000  0x30000   C:\Windows\SYSTEM32\SspiCli.dll
+0x000000002d9e0000  0x29000   C:\Windows\SYSTEM32\USERENV.dll
+0x0000000023dc0000  0x1b000   C:\Windows\SYSTEM32\MPR.dll
+0x00000000087c0000  0x59000   C:\Windows\System32\sechost.dll
+0x0000000008820000  0xa1000   C:\Windows\System32\advapi32.dll
+0x000000002ef20000  0x2d000   C:\Windows\System32\IMM32.DLL
+0x0000000030740000  0x8000    C:\Windows\System32\PSAPI.DLL
+0x000000001d840000  0x91000   C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_elf.dll
+0x0000000025040000  0xa000    C:\Windows\SYSTEM32\VERSION.dll
+0x000000002bee0000  0x23000   C:\Windows\SYSTEM32\WINMM.dll
+0x0000000025390000  0xd7000   C:\Windows\SYSTEM32\WINHTTP.dll
+0x000000002be80000  0x2b000   C:\Windows\SYSTEM32\WINMMBASE.dll
+0x000000002d550000  0xb000    C:\Windows\SYSTEM32\CRYPTBASE.DLL
+0x000000001d240000  0x5d000   C:\Windows\SYSTEM32\ninput.dll
+0x000000002ed80000  0xbf000   C:\Windows\System32\OLEAUT32.dll
+0x00000000f9cf0000  0x3c2e000  C:\Program Files (x86)\Google\Chrome\Application\59.0.3071.86\chrome_child.dll
+0x0000000030b90000  0x6c000   C:\Windows\System32\WS2_32.dll
+0x0000000030440000  0x108000  C:\Windows\System32\COMDLG32.dll
+0x000000002e5e0000  0x1c9000  C:\Windows\System32\CRYPT32.dll
+0x000000002db70000  0x11000   C:\Windows\System32\MSASN1.dll
+0x000000002eb70000  0x56000   C:\Windows\System32\WINTRUST.dll
+0x0000000024200000  0x267000  C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.0_none_108e4f62dfe5d999\COMCTL32.dll
+0x0000000020980000  0x1a9000  C:\Windows\SYSTEM32\dbghelp.dll
+0x0000000025750000  0x19000   C:\Windows\SYSTEM32\USP10.dll
+0x0000000021a10000  0x8a000   C:\Windows\SYSTEM32\WINSPOOL.DRV
+0x0000000026350000  0x2c0000  C:\Windows\SYSTEM32\DWrite.dll
+0x000000002d130000  0x37000   C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x0000000024a90000  0xc000    C:\Windows\SYSTEM32\Secur32.dll
+0x0000000026b90000  0x1c8000  C:\Windows\SYSTEM32\urlmon.dll
+0x000000002d9b0000  0x25000   C:\Windows\SYSTEM32\bcrypt.dll
+0x0000000026f10000  0x286000  C:\Windows\SYSTEM32\iertutil.dll

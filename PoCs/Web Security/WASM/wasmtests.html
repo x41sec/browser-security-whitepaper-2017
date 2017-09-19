@@ -1,0 +1,100 @@
+<html>
+<head>
+  <script>
+
+    // Check for wasm support.
+    if (!('WebAssembly' in window)) {
+      alert('you need a browser with wasm support enabled :(');
+    }
+
+    // Loads a WebAssembly dynamic library, returns a promise.
+    // imports is an optional imports object
+    function loadWebAssembly(filename, imports) {
+      // Fetch the file and compile it
+      return fetch(filename)
+        .then(response => response.arrayBuffer())
+        .then(buffer => WebAssembly.compile(buffer))
+        .then(module => {
+          // Create the imports for the module, including the
+          // standard dynamic library imports
+          imports = imports || {};
+          imports.env = imports.env || {};
+          imports.env.memoryBase = imports.env.memoryBase || 0;
+          imports.env.tableBase = imports.env.tableBase || 0;
+          if (!imports.env.memory) {
+            imports.env.memory = new WebAssembly.Memory({ initial: 256 });
+          }
+          if (!imports.env.table) {
+            imports.env.table = new WebAssembly.Table({ initial: 0, element: 'anyfunc' });
+          }
+	  if (!imports.env.abort) {
+		imports.env.abort = new WebAssembly.Table({ initial:0, element: 'anyfunc' });
+	  }
+          // Create the instance.
+          return new WebAssembly.Instance(module, imports);
+        });
+    }
+    // Main part of this example, loads the module and uses it.
+    loadWebAssembly('wasmtests.wasm')
+      .then(instance => {
+        var exports = instance.exports; // the exports of that instance
+        var intover = exports._intover;
+	var stack_oobread = exports._stack_oobread;
+	var stack_oobwrite_overflow = exports._stack_oobwrite_overflow;
+	var stack_oobwrite_underflow = exports._stack_oobwrite_underflow;
+	var stack_recursion_overflow = exports._stack_recursion_overflow;
+	var hang = exports._hang;
+//	var heap_oobread = exports._heap_oobread;
+//	var heap_oobwrite_overflow = exports._heap_oobwrite_overflow;
+//	var heap_oobwrite_underflow = exports._heap_oobwrite_underflow;
+//	var heap_uaf = exports._heap_uaf;
+	var unreachable = exports._unreachable;
+	var wrap_unreachable = function () {
+		try {
+			unreachable();
+			return "ERROR got out of endless loop without exception!";
+		} catch(e) {
+			return "exception, probably unreachable code: "+e;
+		}
+	}
+	var arg_over = function() {
+		let val = 8589934590;
+		let result = exports._arg_over(val)
+		if (val != result) {
+			return "val("+val+") changed to "+result;
+		} else {
+			return "ok values did not change";
+		}
+	}
+		      
+
+        
+	// SOME TESTS
+	var button = document.getElementById('run');
+        button.value = 'start tests';
+        button.addEventListener('click', function() {
+	  // ADD TESTS HERE
+//        alert('trying to access code at runtime: ' + access_code() );
+        alert('overflowed int is ' + intover( 2147483647 ) );
+	alert('arg_over is ' + arg_over());
+	alert('stack_oobread is ' + stack_oobread());
+	alert('stack_oobwrite_overflow is ' + stack_oobwrite_overflow());
+	alert('stack_oobwrite_underflow is ' + stack_oobwrite_underflow());
+	alert('stack_recursion_overflow (recursion 10) returned ' + stack_recursion_overflow(0, 10));
+	alert('stack_recursion_overflow (recursion 2147483647) returned ' + stack_recursion_overflow(0, 2147483647));
+	//alert('heap_oobread is' + heap_oobwrite());
+	//alert('heap_oobwrite_overflow is ' + heap_oobwrite_overflow());
+	//alert('heap_oobwrite_underflow is ' + heap_oobwrite_underflow());
+	//alert('heap_uaf is ' + heap_uaf());
+	alert('unreachable() = ' + wrap_unreachable());
+	alert('hanging via hang() = ' + hang());
+
+        }, false);
+      }
+    );
+  </script>
+</head>
+<body>
+  <input type="button" id="run" value="(waiting for WebAssembly)"/>
+</body>
+</html>

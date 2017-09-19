@@ -1,0 +1,378 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Zero Day Initiative</title>        
+        <link rel="stylesheet" type="text/css" href="/styles/main.css" media="screen" />
+        <!--[if gte IE 7]> <link rel="stylesheet" type="text/css" href="/styles/main-ie.css" media="screen" /><![endif]-->
+        <!--[if lt IE 7]> <link rel="stylesheet" type="text/css" href="/styles/main-ie6.css" media="screen" /><![endif]-->        
+
+        <link rel="alternate" type="application/rss+xml" title="ZDI: Upcoming Advisories"  href="http://feeds.feedburner.com/ZDI-Upcoming-Advisories" />
+        <link rel="alternate" type="application/rss+xml" title="ZDI: Published Advisories" href="http://feeds.feedburner.com/ZDI-Published-Advisories" />
+
+        <script language="JavaScript">
+            function pre_load_nav_images ()
+            {
+                about_off                        = new Image();
+                about_off.src                    = "/img/nav/about_off.gif";
+                benefits_off                     = new Image();
+                benefits_off.src                 = "/img/nav/benefits_off.gif";
+                dvlabs_off                       = new Image();
+                dvlabs_off.src                   = "/img/nav/dvlabs_off.gif";
+                faq_off                          = new Image();
+                faq_off.src                      = "/img/nav/faq_off.gif";
+                rss_feeds_off                    = new Image();
+                rss_feeds_off.src                = "/img/nav/rss_feeds_off.gif";
+                secure_login_off                 = new Image();
+                secure_login_off.src             = "/img/nav/secure_login_off.gif";
+                zdi_advisories_off               = new Image();
+                zdi_advisories_off.src           = "/img/nav/zdi_advisories_off.gif";
+                zdi_advisories_published_off     = new Image();
+                zdi_advisories_published_off.src = "/img/nav/zdi_advisories_published_off.gif";
+                zdi_advisories_upcoming_off      = new Image();
+                zdi_advisories_upcoming_off.src  = "/img/nav/zdi_advisories_upcoming_off.gif";
+                about_on                         = new Image();
+                about_on.src                     = "/img/nav/about_on.gif";
+                benefits_on                      = new Image();
+                benefits_on.src                  = "/img/nav/benefits_on.gif";
+                dvlabs_on                        = new Image();
+                dvlabs_on.src                    = "/img/nav/dvlabs_on.gif";
+                faq_on                           = new Image();
+                faq_on.src                       = "/img/nav/faq_on.gif";
+                rss_feeds_on                     = new Image();
+                rss_feeds_on.src                 = "/img/nav/rss_feeds_on.gif";
+                secure_login_on                  = new Image();
+                secure_login_on.src              = "/img/nav/secure_login_on.gif";
+                zdi_advisories_on                = new Image();
+                zdi_advisories_on.src            = "/img/nav/zdi_advisories_on.gif";
+                zdi_advisories_published_on      = new Image();
+                zdi_advisories_published_on.src  = "/img/nav/zdi_advisories_published_on.gif";
+                zdi_advisories_upcoming_on       = new Image();
+                zdi_advisories_upcoming_on.src   = "/img/nav/zdi_advisories_upcoming_on.gif";
+            }
+        </script>
+
+        
+<link rel="stylesheet" type="text/css" href="/styles/advisories.css" media="screen" />   
+
+    </head>
+    
+    <body onload="pre_load_nav_images();">
+
+        <div id="main-site-wrapper">
+                        
+            <div id="main-headerbar-master">
+                <div id="main-headerbar-left"><a href="http://www.trendmicro.com/us/business/network-security/index.html">TippingPoint</a> Zero Day Initiative</div>
+                <div id="main-headerbar-right">&nbsp;</div>
+            </div>
+            <div id="main-headerbar-divider"><!-- divider--></div>
+            <div id="main-header">
+                <div id="main-header-logo"><a href="/"><img src="/img/zdi_logo.gif" alt="ZDI Logo" /></a></div>
+            </div>
+
+            <div id="main-container">
+                <div id="main-sidebar">
+                    <div id="main-navigation">
+                        <div class="main-navigation-header"><div class="main-text-display-none"><b>Navigation</b></div></div>
+                        <ol>
+                            <li id="main-navigation-item-about">
+                                <a href="/about">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">About</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-benefits">
+                                <a href="/about/benefits">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">Rewards</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-faq">
+                                <a href="/about/faq">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">FAQ</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-zdi-advisories">
+                                <a href="/advisories/">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">ZDI Advisories</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-zdi-advisories-upcoming">
+                                <a href="/advisories/upcoming">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">ZDI Upcoming Advisories</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-zdi-advisories-published">
+                                <a href="/advisories/published">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">ZDI Published Advisories</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-secure-login">
+                                <a href="https://www.zerodayinitiative.com/portal/bulletins/">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">Secure Login</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-dvlabs">
+                                <a href="http://www.trendmicro.com/us/security-intelligence/research-and-analysis/digital-vaccine-labs/index.html">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">DVLabs</span></span>
+                                </a>
+                            </li>
+                            <li id="main-navigation-item-rss-feeds">
+                                <a href="/feeds/">
+                                    <span class="main-navigation-item"><span class="main-text-display-none">Feeds</span></span>
+                                </a>
+                            </li>
+                        </ol>
+                        <div class="main-navigation-footer"></div>
+
+                        
+
+                        <div id="main-twitter">
+                        <div id="main-twitter-header"></div>
+                        <div id="main-twitter-content">
+                            <span>RECENT TWEETS...</span>
+                                <div id="twitter_update_list"></div>
+                            <span><a href="http://twitter.com/thezdi" style="display:block">follow us @thezdi</a></span>
+                        </div>
+                        <div id="main-twitter-footer"></div>
+                        </div>
+
+                        <script language="JavaScript">
+                        function twitterCallback2 (twitters)
+                        {
+                            var statusHTML = [];
+                            
+                            for (var i=0; i<twitters.length; i++)
+                            {
+                                var username = twitters[i].user.screen_name;
+                                var status = twitters[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {return '<a href="'+url+'">'+url+'</a>';}).replace(/\B@([_a-z0-9]+)/ig, function(reply) {return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';});
+
+                                statusHTML.push('<p>'+status+'<span style="dislay:block;text-align:right;"><i>'+relative_time(twitters[i].created_at)+'</i></span></p>');
+                            }
+                            
+                            document.getElementById('twitter_update_list').innerHTML = statusHTML.join('');
+                        }
+
+                        function relative_time (time_value)
+                        {
+                            var values      = time_value.split(" ");
+                            time_value      = values[1] + " " + values[2] + ", " + values[5] + " " + values[3];
+                            var parsed_date = Date.parse(time_value);
+                            var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
+                            var delta       = parseInt((relative_to.getTime() - parsed_date) / 1000);
+                            delta           = delta + (relative_to.getTimezoneOffset() * 60);
+                        
+                            if (delta < 60) {
+                                return 'less than a minute ago';
+                            } else if (delta < 120) {
+                                return 'about a minute ago';
+                            } else if (delta < (60*60)) {
+                                return (parseInt(delta / 60)).toString() + ' minutes ago';
+                            } else if (delta < (120*60)) {
+                                return 'about an hour ago';
+                            } else if (delta < (24*60*60)) {
+                                return 'about ' + (parseInt(delta / 3600)).toString() + ' hours ago';
+                            } else if (delta < (48*60*60)) {
+                                return '1 day ago';
+                            } else {
+                                return (parseInt(delta / 86400)).toString() + ' days ago';
+                            }
+                        }
+                        </script>
+
+                        
+
+                    </div>
+                    
+                </div>
+                <div id="main-content">
+
+                
+<h2>Microsoft Edge CTreePos Type Confusion Remote Code Execution Vulnerability</h2>
+<b>ZDI-16-511</b>: September 16th, 2016
+
+
+<h4>CVE ID</h4>
+<ul>
+    
+        <a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-3295">CVE-2016-3295</a>
+    
+</ul>
+
+
+
+<h4>CVSS Score</h4>
+<ul>
+    6.8, <a href="http://nvd.nist.gov/cvss.cfm?calculator&version=2&vector=(AV:N/AC:M/Au:N/C:P/I:P/A:P)">(AV:N/AC:M/Au:N/C:P/I:P/A:P)</a>
+</ul>
+
+
+<h4>Affected Vendors</h4>
+<ul>
+
+    
+        <a href="http://www.microsoft.com/">Microsoft</a><br />
+    
+
+</ul>
+
+<h4>Affected Products</h4>
+<ul>
+
+    
+        
+            Edge<br />
+        
+    
+
+</ul>
+
+
+
+<h4>Vulnerability Details</h4>
+<p><br />    This vulnerability allows remote attackers to execute arbitrary code on vulnerable installations of Microsoft Edge. User interaction is required to exploit this vulnerability in that the target must visit a malicious page or open a malicious file.</p>
+
+<p>The specific flaw relates to how Edge handles text nodes within HTML documents. By manipulating a document&#39;s elements an attacker can cause Microsoft Edge to use a pointer to a CTreePos as if it were a pointer to a Tree::ANode. An attacker can leverage this vulnerability to execute code under the context of the current process.<br />  </p>
+
+<h4>Vendor Response</h4>
+
+    
+        Microsoft has issued an update to correct this vulnerability. More details can be found at:
+        <br />
+        <ul><a href="https://technet.microsoft.com/library/security/MS16-105">https://technet.microsoft.com/library/security/MS16-105</a></ul>
+    
+
+
+<h4>Disclosure Timeline</h4>
+
+<ul>
+2016-05-26 - Vulnerability reported to vendor<br />
+2016-09-16 - Coordinated public release of advisory<br />
+</ul>
+
+
+<h4>Credit</h4>
+This vulnerability was discovered by:
+<ul>
+
+    Garage4Hackers<br />
+
+</ul>
+
+                
+                </div>
+            </div>
+            <div id="main-footer-divider" ><!-- divider --></div>
+
+            
+
+<div id="main-footer">
+    <div id="main-footer-latest-advisories-published">
+        <h2><a href="http://feeds.feedburner.com/ZDI-Published-Advisories"><img src="/img/rss_icon.gif" height="14" width="14" alt="RSS" /></a><a href="/advisories/published">Published Advisories</a></h2>
+        
+        <dl>
+            <dt><a href="/advisories/ZDI-17-365">ZDI-17-365: Hewlett Packard Enterprise</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">published 2017-05-18</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/ZDI-17-364">ZDI-17-364: Apple</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">published 2017-05-18</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/ZDI-17-363">ZDI-17-363: Apple</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">published 2017-05-18</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/ZDI-17-362">ZDI-17-362: Apple</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">published 2017-05-18</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/ZDI-17-361">ZDI-17-361: Apple</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">published 2017-05-18</li>
+                </ul>
+            </dd>
+        </dl>
+        
+    </div>
+    <div id="main-footer-latest-advisories-upcoming">
+        <h2><a href="http://feeds.feedburner.com/ZDI-Upcoming-Advisories"><img src="/img/rss_icon.gif" height="14" width="14" alt="RSS" /></a><a href="/advisories/upcoming">Upcoming Advisories</a></h2>
+        
+        <dl>
+            <dt><a href="/advisories/upcoming/">Adobe</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">reported 2017-05-18, 10 days ago</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/upcoming/">Adobe</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">reported 2017-05-18, 10 days ago</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/upcoming/">Adobe</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">reported 2017-05-18, 10 days ago</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/upcoming/">Adobe</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">reported 2017-05-18, 10 days ago</li>
+                </ul>
+            </dd>
+        </dl>
+        
+        <dl>
+            <dt><a href="/advisories/upcoming/">Adobe</a></dt>
+            <dd>
+                <ul class="meta">
+                    <li class="date">reported 2017-05-18, 10 days ago</li>
+                </ul>
+            </dd>
+        </dl>
+        
+    </div>
+</div>
+
+                
+            <div id="main-footer-divider2" ><!-- divider --></div>
+            
+        </div>
+    </body>
+</html>
+
+
+<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/thezdi.json?callback=twitterCallback2&amp;count=3"></script>
+

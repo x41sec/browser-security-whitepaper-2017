@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      function fORTCGetIPAddresses(fSuccessCallback, fErrorCallback) {
+        if (!window.RTCIceGatherer) {
+          fErrorCallback(new Error("RTCIceGatherer not found: ORTC does not appear to be implemented in this browser."));
+        };
+        var oRTCIceGatherer = new RTCIceGatherer({
+              "gatherPolicy": "all",
+              "iceServers": [ ],
+            }),
+            dsIPAddresses = {};
+        oRTCIceGatherer.onlocalcandidate = function (oEvent) {
+          if (oEvent.candidate.type == "host") {
+            dsIPAddresses[oEvent.candidate.ip] = 1;
+            console.log("Found local ip address " + JSON.stringify(oEvent.candidate.ip));
+          } else if (oEvent.candidate.type) {
+            console.log("Ignored non-host candidate " + JSON.stringify(oEvent.candidate));
+          } else {
+            console.log("done!");
+            fSuccessCallback(Object.keys(dsIPAddresses));
+          };
+        };
+        oRTCIceGatherer.onerror = function (oError) {
+          fErrorCallback(oError);
+        };
+      };
+      function fShowIPAddresses() {
+        fORTCGetIPAddresses(
+          function (asIPAddresses) {
+            if (asIPAddresses.length) {
+              document.write("Your IP address: " + asIPAddresses.join(", "));
+            } else {
+              document.write("Your IP address was not returned by ORTC");
+            };
+          },
+          function (oError) {
+            document.write("Error: " + oError);
+          }
+        );
+      };
+    </script>
+  </head>
+  <body onload="fShowIPAddresses();">
+  <body>
+</html>

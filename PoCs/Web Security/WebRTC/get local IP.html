@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+      function fWebRTCGetIPAddresses(fSuccessCallback, fErrorCallback) {
+        window.RTCPeerConnection  = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+        if (!window.RTCPeerConnection) {
+          fErrorCallback("RTCPeerConnection not found: WebRTC does not appear to be implemented in this browser.");
+          return;
+        };
+        var oRTCPeerConnection = new RTCPeerConnection( 
+              { "iceServers": [ ] },
+              {
+                "optional": [
+                  { "RtpDataChannels": true },
+                  { "googIPv6": true },
+                ]
+              }
+            ),
+            dsIPAddresses = {};
+        if (!oRTCPeerConnection.createDataChannel) {
+ //         fErrorCallback("RTCPeerConnection.createDataChannel not found: WebRTC does not appear to be fully implemented in this browser.");
+//          return;
+        };
+        oRTCPeerConnection.onicecandidate = function fRTCPeerConnectionIceEventHandler(oEvent) {
+          if (oEvent.candidate) {
+            var asCandidate = oEvent.candidate.candidate.split(" ");
+            if (asCandidate[7] == "host") {
+              var sIPAddress = asCandidate[4];
+              if (/[0-9]{1,3}(?:\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7}/.exec(sIPAddress)) {
+                dsIPAddresses[sIPAddress] = 1;
+                console.log("Found local ip address " + JSON.stringify(sIPAddress));
+              } else {
+                console.log("Ignored non-ip candidate " + JSON.stringify(oEvent.candidate.candidate));
+              };
+            } else {
+              console.log("Ignored non-host candidate " + JSON.stringify(oEvent.candidate.candidate));
+            };
+          } else {
+            console.log("done!");
+            fSuccessCallback(Object.keys(dsIPAddresses));
+          };
+        };
+        oRTCPeerConnection.createDataChannel("", { "reliable": false });
+        oRTCPeerConnection.createOffer(
+          function fCreateOfferSuccess(oRTCSessionDescription) {
+            oRTCPeerConnection.setLocalDescription(
+              oRTCSessionDescription,
+              function fSetLocalDescriptionSuccess() {
+              },
+              function fSetLocalDescriptionError(sErrorMessage) {
+                fErrorCallback("Could not set local description: " + sErrorMessage);
+              }
+            );
+          },
+          function fCreateOfferError(sErrorMessage) {
+            fErrorCallback("Could not create offer: " + sErrorMessage);
+          }
+        );
+      };
+      function fShowIPAddresses() {
+        fWebRTCGetIPAddresses(
+          function (asIPAddresses) {
+            if (asIPAddresses.length) {
+              document.write("Your IP address: " + asIPAddresses.join(", "));
+            } else {
+              document.write("Your IP address was not returned by WebRTC");
+            };
+          },
+          function (oError) {
+            document.write("Error: " + oError);
+          }
+        );
+      };
+    </script>
+  </head>
+  <body onload="fShowIPAddresses();">
+  <body>
+</html>

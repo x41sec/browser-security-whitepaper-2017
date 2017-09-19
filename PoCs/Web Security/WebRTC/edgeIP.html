@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <script>
+var iceOptions = { "gatherPolicy": "all", "iceServers": [] };
+var gath = new RTCIceGatherer(iceOptions);
+var port = -1;
+gath.onlocalcandidate = function(evt) {
+    port = evt.candidate.port;
+    ip = evt.candidate.ip;
+
+    alert(ip+":"+port);
+};
+
+    </script>
+  </head>
+  <body>
+  <body>
+</html>

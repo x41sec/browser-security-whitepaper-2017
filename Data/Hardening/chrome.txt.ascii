@@ -1,0 +1,220 @@
+Microsoft (R) COFF/PE Dumper Version 14.00.23506.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+
+PE signature found
+
+File Type: EXECUTABLE IMAGE
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               8 number of sections
+        59114E27 time date stamp Mon May  8 22:05:43 2017
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+              22 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.00 linker version
+           BA800 size of code
+           5F000 size of initialized data
+               0 size of uninitialized data
+           95E70 entry point (0000000140095E70)
+            1000 base of code
+       140000000 image base (0000000140000000 to 000000014011EFFF)
+            1000 section alignment
+             200 file alignment
+            5.02 operating system version
+            0.00 image version
+            5.02 subsystem version
+               0 Win32 version
+          11F000 size of image
+             400 size of headers
+          1241C5 checksum
+               2 subsystem (Windows GUI)
+            C160 DLL characteristics
+                   High Entropy Virtual Addresses
+                   Dynamic base
+                   NX compatible
+                   Control Flow Guard
+                   Terminal Server Aware
+          200000 size of stack reserve
+            1000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+           E54F0 [      6C] RVA [size] of Export Directory
+           E555C [      DC] RVA [size] of Import Directory
+           F9000 [   23568] RVA [size] of Resource Directory
+           EE000 [    8F04] RVA [size] of Exception Directory
+          115800 [    1B58] RVA [size] of Certificates Directory
+          11D000 [    16F4] RVA [size] of Base Relocation Directory
+           D9220 [      38] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+           D9258 [      28] RVA [size] of Thread Storage Directory
+           CBD30 [      70] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+           BC000 [     918] RVA [size] of Import Address Table Directory
+           E5320 [      A0] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+   BA6AC virtual size
+    1000 virtual address (0000000140001000 to 00000001400BB6AB)
+   BA800 size of raw data
+     400 file pointer to raw data (00000400 to 000BABFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .rdata name
+   2B5C6 virtual size
+   BC000 virtual address (00000001400BC000 to 00000001400E75C5)
+   2B600 size of raw data
+   BAC00 file pointer to raw data (000BAC00 to 000E61FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    59114E27 cv            59 000DC280    DAE80    Format: RSDS, {2718F854-9F89-43D5-BF57-0B59B998B133}, 1, C:\b\c\b\win64_pgo\src\out\Release_x64\initialexe\chrome.exe.pdb
+    59114E27 coffgrp      47C 000DC2DC    DAEDC    4C544347 (LTCG)
+
+  Section contains the following load config:
+
+            00000070 size
+                   0 time date stamp
+                0.00 Version
+                   0 GlobalFlags Clear
+                   0 GlobalFlags Set
+                   0 Critical Section Default Timeout
+                   0 Decommit Free Block Threshold
+              200000 Decommit Total Free Threshold
+    0000000000000000 Lock Prefix Table
+                   0 Maximum Allocation Size
+                   0 Virtual Memory Threshold
+                   0 Process Heap Flags
+                   0 Process Affinity Mask
+                   0 CSD Version
+                0000 Reserved
+    0000000000000000 Edit list
+    00000001400E8000 Security Cookie
+
+SECTION HEADER #3
+   .data name
+    56B4 virtual size
+   E8000 virtual address (00000001400E8000 to 00000001400ED6B3)
+    1400 size of raw data
+   E6200 file pointer to raw data (000E6200 to 000E75FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+  .pdata name
+    8F04 virtual size
+   EE000 virtual address (00000001400EE000 to 00000001400F6F03)
+    9000 size of raw data
+   E7600 file pointer to raw data (000E7600 to 000F05FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+  .didat name
+      60 virtual size
+   F7000 virtual address (00000001400F7000 to 00000001400F705F)
+     200 size of raw data
+   F0600 file pointer to raw data (000F0600 to 000F07FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #6
+    .tls name
+       9 virtual size
+   F8000 virtual address (00000001400F8000 to 00000001400F8008)
+     200 size of raw data
+   F0800 file pointer to raw data (000F0800 to 000F09FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #7
+   .rsrc name
+   23568 virtual size
+   F9000 virtual address (00000001400F9000 to 000000014011C567)
+   23600 size of raw data
+   F0A00 file pointer to raw data (000F0A00 to 00113FFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #8
+  .reloc name
+    16F4 virtual size
+  11D000 virtual address (000000014011D000 to 000000014011E6F3)
+    1800 size of raw data
+  114000 file pointer to raw data (00114000 to 001157FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+  Summary
+
+        6000 .data
+        1000 .didat
+        9000 .pdata
+       2C000 .rdata
+        2000 .reloc
+       24000 .rsrc
+       BB000 .text
+        1000 .tls

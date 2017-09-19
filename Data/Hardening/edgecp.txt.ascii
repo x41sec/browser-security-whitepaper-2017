@@ -1,0 +1,283 @@
+Microsoft (R) COFF/PE Dumper Version 14.00.23506.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Windows\SystemApps\Microsoft.MicrosoftEdge_8wekyb3d8bbwe\MicrosoftEdgeCP.exe
+
+PE signature found
+
+File Type: EXECUTABLE IMAGE
+
+FILE HEADER VALUES
+            8664 machine (x64)
+               7 number of sections
+        58BA5911 time date stamp Fri Mar  3 22:05:05 2017
+               0 file pointer to symbol table
+               0 number of symbols
+              F0 size of optional header
+              22 characteristics
+                   Executable
+                   Application can handle large (>2GB) addresses
+
+OPTIONAL HEADER VALUES
+             20B magic # (PE32+)
+           14.00 linker version
+            6200 size of code
+            F200 size of initialized data
+               0 size of uninitialized data
+            2540 entry point (0000000140002540)
+            1000 base of code
+       140000000 image base (0000000140000000 to 0000000140019FFF)
+            1000 section alignment
+             200 file alignment
+           10.00 operating system version
+           10.00 image version
+           10.00 subsystem version
+               0 Win32 version
+           1A000 size of image
+             400 size of headers
+           1B2CA checksum
+               2 subsystem (Windows GUI)
+            C160 DLL characteristics
+                   High Entropy Virtual Addresses
+                   Dynamic base
+                   NX compatible
+                   Control Flow Guard
+                   Terminal Server Aware
+          100000 size of stack reserve
+            E000 size of stack commit
+          100000 size of heap reserve
+            1000 size of heap commit
+               0 loader flags
+              10 number of directories
+               0 [       0] RVA [size] of Export Directory
+            CA08 [      C8] RVA [size] of Import Directory
+           11000 [    7C08] RVA [size] of Resource Directory
+            F000 [     A50] RVA [size] of Exception Directory
+           15000 [    2168] RVA [size] of Certificates Directory
+           19000 [     274] RVA [size] of Base Relocation Directory
+            B0F0 [      38] RVA [size] of Debug Directory
+               0 [       0] RVA [size] of Architecture Directory
+               0 [       0] RVA [size] of Global Pointer Directory
+               0 [       0] RVA [size] of Thread Storage Directory
+            8AD0 [      D0] RVA [size] of Load Configuration Directory
+               0 [       0] RVA [size] of Bound Import Directory
+            8E18 [     390] RVA [size] of Import Address Table Directory
+            C9A4 [      40] RVA [size] of Delay Import Directory
+               0 [       0] RVA [size] of COM Descriptor Directory
+               0 [       0] RVA [size] of Reserved Directory
+
+
+SECTION HEADER #1
+   .text name
+    602A virtual size
+    1000 virtual address (0000000140001000 to 0000000140007029)
+    6200 size of raw data
+     400 file pointer to raw data (00000400 to 000065FF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+60000020 flags
+         Code
+         Execute Read
+
+SECTION HEADER #2
+  .rdata name
+    5660 virtual size
+    8000 virtual address (0000000140008000 to 000000014000D65F)
+    5800 size of raw data
+    6600 file pointer to raw data (00006600 to 0000BDFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+  Debug Directories
+
+        Time Type        Size      RVA  Pointer
+    -------- ------- -------- -------- --------
+    58BA5911 cv            2C 0000B728     9D28    Format: RSDS, {DD7D9101-4227-411F-8F82-C948E73C3992}, 1, MicrosoftEdgeCP.pdb
+    58BA5911 coffgrp      434 0000B754     9D54    50475500 (PGU)
+
+  Section contains the following load config:
+
+            000000D0 size
+                   0 time date stamp
+                0.00 Version
+                   0 GlobalFlags Clear
+                   0 GlobalFlags Set
+                   0 Critical Section Default Timeout
+                   0 Decommit Free Block Threshold
+                   0 Decommit Total Free Threshold
+    0000000000000000 Lock Prefix Table
+                   0 Maximum Allocation Size
+                   0 Virtual Memory Threshold
+                   0 Process Heap Flags
+                   0 Process Affinity Mask
+                   0 CSD Version
+                0000 Reserved
+    0000000000000000 Edit list
+    000000014000E1B8 Security Cookie
+    00000001400091A8 Guard CF address of check-function pointer
+    00000001400091B0 Guard CF address of dispatch-function pointer
+    0000000140009238 Guard CF function table
+                  37 Guard CF function count
+            00013500 Guard Flags
+                       CF Instrumented
+                       FID table present
+                       Protect delayload IAT
+                       Delayload IAT in its own section
+                       Long jump target table present
+                0000 Code Integrity Flags
+                0000 Code Integrity Catalog
+            00000000 Code Integrity Catalog Offset
+            00000000 Code Integrity Reserved
+    0000000000000000 Guard CF address taken IAT entry table
+                   0 Guard CF address taken IAT entry count
+    0000000000000000 Guard CF long jump target table
+                   0 Guard CF long jump target count
+
+    Guard CF Function Table
+
+          Address
+          --------
+          0000000140001000
+          0000000140001010
+          0000000140001020
+          0000000140001030
+          0000000140001060
+          0000000140001080
+          0000000140001090
+          00000001400010C0
+          00000001400010E0
+          0000000140002230
+          0000000140002290
+          0000000140002300
+          0000000140002410
+          00000001400024F0
+          0000000140002540
+          00000001400027E0
+          0000000140002820
+          0000000140002AC0
+          0000000140002BA0
+          0000000140002BF0
+          0000000140002DA0
+          0000000140002DC0
+          0000000140002FF0
+          0000000140003020
+          0000000140003060
+          00000001400034D0
+          0000000140003520
+          0000000140003540
+          0000000140003560
+          0000000140003640
+          00000001400036B0
+          0000000140003700
+          0000000140003770
+          0000000140003780
+          0000000140003790
+          0000000140003830
+          0000000140003880
+          00000001400038B0
+          00000001400039F0
+          0000000140003A10
+          0000000140003B50
+          0000000140003B70
+          0000000140003B90
+          0000000140003BA0
+          0000000140003BB0
+          0000000140003BC0
+          0000000140004140
+          0000000140004A90
+          0000000140004B00
+          0000000140005BC0
+          00000001400064E0
+          0000000140006520
+          0000000140006830
+          0000000140006AE0
+          0000000140006F20
+
+SECTION HEADER #3
+   .data name
+     9F2 virtual size
+    E000 virtual address (000000014000E000 to 000000014000E9F1)
+     200 size of raw data
+    BE00 file pointer to raw data (0000BE00 to 0000BFFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #4
+  .pdata name
+     A50 virtual size
+    F000 virtual address (000000014000F000 to 000000014000FA4F)
+     C00 size of raw data
+    C000 file pointer to raw data (0000C000 to 0000CBFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #5
+  .didat name
+      10 virtual size
+   10000 virtual address (0000000140010000 to 000000014001000F)
+     200 size of raw data
+    CC00 file pointer to raw data (0000CC00 to 0000CDFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+C0000040 flags
+         Initialized Data
+         Read Write
+
+SECTION HEADER #6
+   .rsrc name
+    7C08 virtual size
+   11000 virtual address (0000000140011000 to 0000000140018C07)
+    7E00 size of raw data
+    CE00 file pointer to raw data (0000CE00 to 00014BFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+40000040 flags
+         Initialized Data
+         Read Only
+
+SECTION HEADER #7
+  .reloc name
+     274 virtual size
+   19000 virtual address (0000000140019000 to 0000000140019273)
+     400 size of raw data
+   14C00 file pointer to raw data (00014C00 to 00014FFF)
+       0 file pointer to relocation table
+       0 file pointer to line numbers
+       0 number of relocations
+       0 number of line numbers
+42000040 flags
+         Initialized Data
+         Discardable
+         Read Only
+
+  Summary
+
+        1000 .data
+        1000 .didat
+        1000 .pdata
+        6000 .rdata
+        1000 .reloc
+        8000 .rsrc
+        7000 .text
