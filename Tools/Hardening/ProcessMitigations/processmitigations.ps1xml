@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuration>
+  <ViewDefinitions>
+
+    <!-- View for displaying the AppMitigations object -->
+    <View>
+      <Name>AppMitigations</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Samples.PowerShell.Commands.AppMitigations</TypeName>
+      </ViewSelectedBy>
+
+	  <Controls>
+
+        <!-- Control for displaying the DEPPolicy -->
+        <Control>
+          <Name>depControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>Enable    	                : </Text>
+				  <ExpressionBinding>
+					<PropertyName>Enable</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>Disable ATL                 : </Text>
+				  <ExpressionBinding>
+					<PropertyName>DisableATL</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+	  
+	    <!-- Control for displaying the ASLRPolicy -->
+	    <Control>
+          <Name>aslrControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>BottomUp                    : </Text>
+				  <ExpressionBinding>
+					<PropertyName>BottomUp</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>ForceRelocate               : </Text>
+				  <ExpressionBinding>
+					<PropertyName>ForceRelocate</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>HighEntropy                 : </Text>
+				  <ExpressionBinding>
+					<PropertyName>HighEntropy</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>DisallowStripped            : </Text>
+				  <ExpressionBinding>
+					<PropertyName>DisallowStripped</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the StrictHandlePolicy -->
+	    <Control>
+          <Name>strictHandleControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>RaiseExceptionOnInvalid    	: </Text>
+				  <ExpressionBinding>
+					<PropertyName>RaiseExceptionOnInvalid</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>HandleExceptionsPermanently : </Text>
+				  <ExpressionBinding>
+					<PropertyName>HandleExceptionsPermanently</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the SystemCallPolicy -->
+	    <Control>
+          <Name>systemCallControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>DisallowWin32kSysCalls    	: </Text>
+				  <ExpressionBinding>
+					<PropertyName>DisallowWin32kSysCalls</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the ExtensionPointPolicy -->
+	    <Control>
+          <Name>extensionPointControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>DisableExtensionPoints      : </Text>
+				  <ExpressionBinding>
+					<PropertyName>DisableExtensionPoints</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the DynamicCodePolicy -->
+	    <Control>
+          <Name>dynamicCodeControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>ProhibitDynamicCode    	: </Text>
+				  <ExpressionBinding>
+					<PropertyName>ProhibitDynamicCode</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>AllowThreadOpt              : </Text>
+				  <ExpressionBinding>
+					<PropertyName>AllowThreadOpt</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>AllowRemoteDowngrade        : </Text>
+				  <ExpressionBinding>
+					<PropertyName>AllowRemoteDowngrade</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the CFGPolicy -->
+	    <Control>
+          <Name>CFGControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>EnableCFG    	        : </Text>
+				  <ExpressionBinding>
+					<PropertyName>EnableCFG</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>EnableExportSuppression     : </Text>
+				  <ExpressionBinding>
+					<PropertyName>EnableExportSuppression</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>StrictMode                  : </Text>
+				  <ExpressionBinding>
+					<PropertyName>StrictMode</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the BinarySignaturePolicy -->
+	    <Control>
+          <Name>binarySignatureControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>MicrosoftSignedOnly    	: </Text>
+				  <ExpressionBinding>
+					<PropertyName>MicrosoftSignedOnly</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>StoreSignedOnly             : </Text>
+				  <ExpressionBinding>
+					<PropertyName>StoreSignedOnly</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>MitigationOptIn             : </Text>
+				  <ExpressionBinding>
+					<PropertyName>MitigationOptIn</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the FontDisablePolicy -->
+	    <Control>
+          <Name>fontDisableControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>DisableNonSystemFonts       : </Text>
+				  <ExpressionBinding>
+					<PropertyName>DisableNonSystemFonts</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>AuditNonSystemFontLoading   : </Text>
+				  <ExpressionBinding>
+					<PropertyName>AuditNonSystemFontLoading</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+		
+		<!-- Control for displaying the ImageLoadPolicy -->
+	    <Control>
+          <Name>imageLoadControl</Name>
+          <CustomControl>
+            <CustomEntries>
+              <CustomEntry>
+                <CustomItem>
+				  <Text>NoRemoteImages    	        : </Text>
+				  <ExpressionBinding>
+					<PropertyName>NoRemoteImages</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>NoLowMandatoryLabelImages   : </Text>
+				  <ExpressionBinding>
+					<PropertyName>NoLowMandatoryLabelImages</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+				  <Text>PreferSystem32Images        : </Text>
+				  <ExpressionBinding>
+					<PropertyName>PreferSystem32Images</PropertyName>
+				  </ExpressionBinding>
+				  <NewLine/>
+                </CustomItem>
+              </CustomEntry>
+            </CustomEntries>
+          </CustomControl>
+        </Control>
+	  </Controls>
+
+	<!-- Main display for AppMitigations -->
+      <CustomControl>
+        <CustomEntries>
+          <CustomEntry>
+
+            <!-- Display properties from the AppMitigations Object -->
+            <CustomItem>
+              <Text>ProcessName: </Text>
+              <ExpressionBinding>
+                <PropertyName>ProcessName</PropertyName>
+              </ExpressionBinding>
+              <NewLine/>
+              <Text>Source     : </Text>
+              <ExpressionBinding>
+                <PropertyName>Source</PropertyName>
+              </ExpressionBinding>
+              <NewLine/>
+              <Text>Id         : </Text>
+              <ExpressionBinding>
+                <PropertyName>Id</PropertyName>
+              </ExpressionBinding>
+              <NewLine/>
+              <NewLine/>
+              <Text>DEP:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>dep</PropertyName>
+                    <CustomControlName>depControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>ASLR:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>aslr</PropertyName>
+                    <CustomControlName>aslrControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>StrictHandle:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>strictHandle</PropertyName>
+                    <CustomControlName>strictHandleControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>System Call:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>sysCall</PropertyName>
+                    <CustomControlName>systemCallControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>ExtensionPoint:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>extensionPoint</PropertyName>
+                    <CustomControlName>extensionPointControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>DynamicCode:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>dynamicCode</PropertyName>
+                    <CustomControlName>dynamicCodeControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>CFG:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>cfg</PropertyName>
+                    <CustomControlName>CFGControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>BinarySignature:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>binarySignature</PropertyName>
+                    <CustomControlName>binarySignatureControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>FontDisable:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>fontDisable</PropertyName>
+                    <CustomControlName>fontDisableControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+			  <NewLine/>
+              <Text>ImageLoad:</Text>
+              <NewLine/>
+              <Frame>
+                <LeftIndent>4</LeftIndent>
+                <CustomItem>
+                  <ExpressionBinding>
+                    <PropertyName>imageLoad</PropertyName>
+                    <CustomControlName>imageLoadControl</CustomControlName>
+                  </ExpressionBinding>
+                </CustomItem>
+              </Frame>
+
+            </CustomItem>
+          </CustomEntry>
+        </CustomEntries>
+      </CustomControl>
+	
+    </View>
+  </ViewDefinitions>
+</Configuration>

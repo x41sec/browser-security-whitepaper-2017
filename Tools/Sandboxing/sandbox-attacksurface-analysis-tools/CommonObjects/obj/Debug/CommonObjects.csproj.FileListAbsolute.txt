@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\CommonObjects.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\CommonObjects.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\CommonObjects.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\obj\Debug\CommonObjects.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\obj\Debug\CommonObjects.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CommonObjects\obj\Debug\CommonObjects.pdb

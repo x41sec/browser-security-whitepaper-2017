@@ -1,0 +1,17 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\en-US\about_ManagingNtObjectLifetime.help.txt
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\en-US\about_NtObjectManagerProvider.help.txt
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\Formatters.ps1xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtObjectManager.psm1
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtObjectManager.psd1
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtObjectManager.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtObjectManager.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtObjectManager.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\ManagedHandleUtils.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\System.Management.Automation.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\ManagedHandleUtils.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\obj\Debug\NtObjectManager.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\obj\Debug\NtObjectManager.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtObjectManager\obj\Debug\NtObjectManager.pdb

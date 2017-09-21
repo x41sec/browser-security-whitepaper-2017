@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\CheckProcessAccess.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\CheckProcessAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\CheckProcessAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\obj\Debug\CheckProcessAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\obj\Debug\CheckProcessAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckProcessAccess\obj\Debug\CheckProcessAccess.csprojResolveAssemblyReference.cache

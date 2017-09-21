@@ -1,0 +1,12 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NewProcessFromToken.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NewProcessFromToken.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NewProcessFromToken.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\ManagedHandleUtils.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\ManagedHandleUtils.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\obj\Debug\NewProcessFromToken.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\obj\Debug\NewProcessFromToken.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NewProcessFromToken\obj\Debug\NewProcessFromToken.pdb

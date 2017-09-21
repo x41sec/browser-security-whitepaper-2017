@@ -1,0 +1,3239 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NtObjectManager</name>
+    </assembly>
+    <members>
+        <member name="T:NtObjectManager.AccessCheckResult">
+             <summary>
+            <para type="description">General Access check result.</para>
+             </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.Name">
+            <summary>
+            The name of the object which was accessed (depends on the type).
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.TypeName">
+            <summary>
+            Name of the type accessed.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.GrantedAccess">
+            <summary>
+            Granted access.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.GrantedAccessString">
+            <summary>
+            Get granted access as a type specific string
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.GrantedGenericAccessString">
+            <summary>
+            Get granted access as generic access string.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.GenericMapping">
+            <summary>
+            The generic mapping associated with this type.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.SecurityDescriptor">
+            <summary>
+            The security descriptor associated with this access check.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.TokenInfo">
+            <summary>
+            Information the token used in the access check.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.IsRead">
+            <summary>
+            Was read access granted?
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.IsWrite">
+            <summary>
+            Was write access granted?
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.IsExecute">
+            <summary>
+            Was execute access granted?
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.IsAll">
+            <summary>
+            Was all access granted?
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.IsDirectory">
+            <summary>
+            Is the resource being access a directory.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AccessCheckResult.TokenId">
+            <summary>
+            Unique key for access check result (based on TokenId)
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.TokenInformation">
+            <summary>
+            Information about a token.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.UserName">
+            <summary>
+            Token username
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.IntegrityLevel">
+            <summary>
+            Token integrity level
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.TokenType">
+            <summary>
+            Token type
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.ImpersonationLevel">
+            <summary>
+            Token impersonation level
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.TokenId">
+            <summary>
+            Token ID
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.Elevated">
+            <summary>
+            Elevated token
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.Restricted">
+            <summary>
+            Restricted token
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.AppContainer">
+            <summary>
+            App container token
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.AppContainerSid">
+            <summary>
+            App container SID (if an AppContainer)
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.LowPrivilegeAppContainer">
+            <summary>
+            Low privilege AC
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.SessionId">
+            <summary>
+            The session ID of the token.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.TokenInformation.SourceData">
+            <summary>
+            Additonal information of where the token was sourced from
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.TokenInformation.ToString">
+            <summary>
+            Overridden ToString.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:NtObjectManager.CommonAccessBaseCmdlet">
+            <summary>
+            Common base cmdlet for commands which look at accessible resources.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseCmdlet.ProcessIds">
+            <summary>
+            <para type="description">Specify a list of process IDs to open for their tokens.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseCmdlet.ProcessNames">
+            <summary>
+            <para type="description">Specify a list of process names to open for their tokens.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseCmdlet.ProcessCommandLines">
+            <summary>
+            <para type="description">Specify a list of command lines to filter on find for the process tokens.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseCmdlet.Tokens">
+            <summary>
+            <para type="description">Specify a list token objects.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseCmdlet.Processes">
+            <summary>
+            <para type="description">Specify a list of process objects to get tokens from.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.CommonAccessBaseCmdlet.ProcessRecord">
+            <summary>
+            Overridden process record method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.CommonAccessBaseWithAccessCmdlet`1">
+            <summary>
+            Base class for accessible checks with an access parameter.
+            </summary>
+            <typeparam name="A">The type of access rights to check against.</typeparam>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseWithAccessCmdlet`1.AccessRights">
+            <summary>
+            <para type="description">Access rights to check for in an object's access.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.CommonAccessBaseWithAccessCmdlet`1.AllowPartialAccess">
+            <summary>
+            <para type="description">If AccessRights specified require that only part of the access rights
+            are required to match an access check.</para>
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessiblePathCmdlet`1">
+            <summary>
+            Base class for path based accessible checks.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessiblePathCmdlet`1.Path">
+            <summary>
+            <para type="description">Specify a list of native paths to check.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessiblePathCmdlet`1.Win32Path">
+            <summary>
+            <para type="description">Specify a list of paths in a Win32 format.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessiblePathCmdlet`1.FormatWin32Path">
+            <summary>
+            <para type="description">When generating the results format path in Win32 format.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessiblePathCmdlet`1.Recurse">
+            <summary>
+            <para type="description">Specify whether to recursively check the path for access.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessiblePathCmdlet`1.MaxDepth">
+            <summary>
+            <para type="description">When recursing specify maximum depth.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetAccessiblePathCmdlet`1.ConvertWin32Path(System.String)">
+            <summary>
+            Convert a Win32 path to a native path.
+            </summary>
+            <param name="win32_path">The Win32 path to convert.</param>
+            <returns>The converted native path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetAccessiblePathCmdlet`1.RunAccessCheckPath(System.Collections.Generic.IEnumerable{NtObjectManager.TokenEntry},System.String)">
+            <summary>
+            Run an access check with a path.
+            </summary>
+            <param name="tokens">The list of tokens.</param>
+            <param name="path">The path to check.</param>
+        </member>
+        <member name="T:NtObjectManager.GenericObjectSecurity">
+            <summary>
+            Generic object security which takes an integer access mask.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GenericObjectSecurity.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GenericObjectSecurity.#ctor(NtApiDotNet.NtObject,System.Security.AccessControl.AccessControlSections)">
+            <summary>
+            Constructor taking security descriptor from an object.
+            </summary>
+            <param name="obj">The NT object to extract the security descriptor from.</param>
+            <param name="include_sections">Indicates which bits of the security descriptor you want to include.</param>
+        </member>
+        <member name="T:NtObjectManager.DeviceAccessCheckResult">
+            <summary>
+            <para type="description">Access check result for a device.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.DeviceAccessCheckResult.NamespacePath">
+            <summary>
+            Indicates this was a namespace open
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.DeviceAccessCheckResult.DeviceType">
+            <summary>
+            Indicates the type of device.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.DeviceCheckMode">
+            <summary>
+            <para type="description">Mode for checking device object.</para>
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.DeviceCheckMode.DeviceOnly">
+            <summary>
+            Only check root device.
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.DeviceCheckMode.NamespaceOnly">
+            <summary>
+            Only check device namespace.
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.DeviceCheckMode.DeviceAndNamespace">
+            <summary>
+            Check device and namespace.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleDeviceCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of devices that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks a device and optionally tries to determine
+            if one or more specified tokens can open it. If no tokens are specified the current process
+            token is used.</para>
+            </summary>
+            <example>
+              <code>Get-AccessibleDevice \Device</code>
+              <para>Check accessible devices under \Device for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \Device -AccessRights GenericWrite</code>
+              <para>Check write accessible devices under \Device for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \Device -ProcessIds 1234,5678</code>
+              <para>Check accessible devices under \Device for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \Device -CheckMode DeviceAndNamespace</code>
+              <para>Check accessible devices under \Device for the current process token including ones under a namespace.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \ -Recurse</code>
+              <para>Check recursively for accessible devices under \ for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \ -Recurse -MaxDepth 5</code>
+              <para>Check recursively for accessible objects under \BaseNamedObjects for the current process token to a maximum depth of 5.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \Device\Afd,\Device\Blah</code>
+              <para>Check two devices for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \ -Recurse -AccessRights GenericWrite</code>
+              <para>Check recursively for accessible devices under with write access.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleDevice \ -Recurse -AccessRights GenericWrite -AllowPartialAccess</code>
+              <para>Check recursively for accessible devices with partial write access.</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleDevice \Device -Recurse -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all devices which can be written to in \Device by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.Path">
+            <summary>
+            <para type="description">Specify a list of native paths to check. Can refer to object directories to search for device objects or explicit paths.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.Recurse">
+            <summary>
+            <para type="description">Specify whether to recursively check the directories for devices.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.MaxDepth">
+            <summary>
+            <para type="description">When recursing specify maximum depth.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.CheckMode">
+            <summary>
+            <para type="description">Check mode for device and/or namespace.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.NamespacePath">
+            <summary>
+            <para type="description">If check mode allows namespace paths specify a list of namespace paths to check for access to the device namespace instead of a default.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.CheckEaBuffer">
+            <summary>
+            <para type="description">Check whether the device can be accessed with an EA buffer.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.EaBuffer">
+            <summary>
+            <para type="description">If CheckEaBuffer enabled specify an explicit buffer instead of a default.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleDeviceCmdlet.OpenOptions">
+            <summary>
+            <para type="description">Specify open options for access.</para>
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.FileCheckMode">
+            <summary>
+            <para type="description">Limit access check to specific types of files.</para>
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.FileCheckMode.All">
+            <summary>
+            Check files and directories for access.
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.FileCheckMode.FilesOnly">
+            <summary>
+            Check files only.
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.FileCheckMode.DirectoriesOnly">
+            <summary>
+            Check directories only.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleFileCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of files that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks a file or directory and tries to determine
+            if one or more specified tokens can open them. If no tokens are specified the current process
+            token is used.</para>
+            </summary>
+            <example>
+              <code>Get-AccessibleFile \??\C:\Windows</code>
+              <para>Check accessible file c:\Windows for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleFile \??\C:\Windows -ProcessIds 1234,5678</code>
+              <para>Check accessible file c:\Windows for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>Get-AccessibleFile \??\C:\Windows -Recurse</code>
+              <para>Check recursively for check accessible files under c:\Windows for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleFile -Win32Path C:\Windows -Recurse</code>
+              <para>Check recursively for check accessible files under c:\Windows for the current process token using a Win32 path.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleFile -Win32Path C:\Windows -Recurse -MaxDepth 2</code>
+              <para>Check recursively for check accessible files under c:\Windows for the current process token using a Win32 path with a max depth of 2.</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleFile \??\C:\Windows -Recurse -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all files with can be written to \??\C:\Windows by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleFileCmdlet.DirectoryAccessRights">
+            <summary>
+            <para type="description">Specify a set of directory access rights which a directory must at least be accessible for to count as an access.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleFileCmdlet.CheckMode">
+            <summary>
+            <para type="description">Limit access check to specific types of files.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetAccessibleFileCmdlet.ConvertWin32Path(System.String)">
+            <summary>
+            Convert a Win32 Path to a Native NT path.
+            </summary>
+            <param name="win32_path">The win32 path to convert.</param>
+            <returns>The native path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetAccessibleFileCmdlet.BeginProcessing">
+            <summary>
+            Override for begin processing.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleKeyCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of Registry Keys that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks a registry key and tries to determine
+            if one or more specified tokens can open them. If no tokens are specified the current process
+            token is used.</para>
+            </summary>
+            <example>
+              <code>Get-AccessibleKey \Registry\Machine\Software</code>
+              <para>Check accessible keys \Registry\Machine\Software for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleKey \Registry\Machine\Software -ProcessIds 1234,5678</code>
+              <para>Check accessible keys \Registry\Machine\Software for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>Get-AccessibleKey \Registry\Machine\Software -Recurse</code>
+              <para>Check recursively for accessible keys \Registry\Machine\Software for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleKey \Registry\Machine\Software -Recurse -MaxDepth 5</code>
+              <para>Check recursively for accessible keys \Registry\Machine\Software for the current process token to a maximum depth of 5.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleKey -Win32Path HKLM\Software -Recurse</code>
+              <para>Check recursively for accessible keys NT path HKEY_LOCAL_MACHINE for the current process token using a Win32 path.</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleKey -Win32Path HKCU -Recurse -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all keys with can be written to in HKEY_CURRENT_USER by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="M:NtObjectManager.GetAccessibleKeyCmdlet.BeginProcessing">
+            <summary>
+            Override for begin processing.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetAccessibleKeyCmdlet.ConvertWin32Path(System.String)">
+            <summary>
+            Convert a Win32 Path to a Native NT path.
+            </summary>
+            <param name="win32_path">The win32 path to convert.</param>
+            <returns>The native path.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleNamedPipeCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of named pipes that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks for named pipes and tries to determine
+            if one or more specified tokens can open them. If no tokens are specified the current process
+            token is used.</para>
+            </summary>
+            <example>
+              <code>Get-AccessibleNamedPipe</code>
+              <para>Check accessible named pipes for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleNamedPipe -OpenServer</code>
+              <para>Check accessible named pipes server end points which can be opened for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleNamedPipe -ProcessIds 1234,5678</code>
+              <para>Check accessible named pipes for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleNamedPipes -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all named pipes with can be written to by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleNamedPipeCmdlet.FormatWin32Path">
+            <summary>
+            <para type="description">When generating the results format path in Win32 format.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleNamedPipeCmdlet.OpenServer">
+            <summary>
+            <para type="description">Try and open the server end rather than the client end of the pipe.</para>
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleObjectCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of NT objects that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks a NT object key and optionally tries to determine
+            if one or more specified tokens can open them. If no tokens are specified the current process
+            token is used.</para>
+            </summary>
+            <example>
+              <code>Get-AccessibleObject \BaseNamedObjects</code>
+              <para>Check accessible objects under \ for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject \BaseNamedObjects -ProcessIds 1234,5678</code>
+              <para>Check accessible objects under \BaseNamedObjects for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject \BaseNamedObjects -Recurse</code>
+              <para>Check recursively for accessible objects under \BaseNamedObjects for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject \BaseNamedObjects -Recurse -MaxDepth 5</code>
+              <para>Check recursively for accessible objects under \BaseNamedObjects for the current process token to a maximum depth of 5.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject -Win32Path \ -Recurse</code>
+              <para>Check recursively for accessible objects under the user's based named objects for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject \ -Recurse -AccessRights GenericWrite</code>
+              <para>Check recursively for accessible objects under with write access.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleObject \ -Recurse -AccessRights GenericWrite -AllowPartialAccess</code>
+              <para>Check recursively for accessible objects under with partial write access.</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleObject \BaseNamedObjects -Recurse -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all object which can be written to in \BaseNamedObjects by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleObjectCmdlet.TypeFilter">
+            <summary>
+            <para type="description">Specify list of NT object types to filter on.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleObjectCmdlet.FromHandles">
+            <summary>
+            <para type="description">Specify to find objects based on handles rather than enumerating named paths.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleObjectCmdlet.CheckUnnamed">
+            <summary>
+            <para type="description">Specify when enumerating handles to also check unnamed objects.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetAccessibleObjectCmdlet.ConvertWin32Path(System.String)">
+            <summary>
+            Convert a Win32 Path to a Native NT path.
+            </summary>
+            <param name="win32_path">The win32 path to convert.</param>
+            <returns>The native path.</returns>
+        </member>
+        <member name="T:NtObjectManager.ProcessAccessCheckResult">
+            <summary>
+            <para type="description">Access check result for a process.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ProcessAccessCheckResult.ProcessImagePath">
+            <summary>
+            Process image path.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ProcessAccessCheckResult.ProcessId">
+            <summary>
+            Process ID of the process.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ProcessAccessCheckResult.ProcessCommandLine">
+            <summary>
+            Command line of the process.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ProcessAccessCheckResult.SessionId">
+            <summary>
+            Session ID of the process.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ProcessAccessCheckResult.IsThread">
+            <summary>
+            Gets whether this is a thread access check result.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.ThreadAccessCheckResult">
+            <summary>
+            Access check result for a thread.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ThreadAccessCheckResult.ThreadId">
+            <summary>
+            Thread ID of the thread.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.ThreadAccessCheckResult.ThreadDescription">
+            <summary>
+            Thread description if available.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.ProcessCheckMode">
+            <summary>
+            <para type="description">Specify what objects to query for.</para>
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.ProcessCheckMode.ProcessOnly">
+            <summary>
+            Only check processes
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.ProcessCheckMode.ThreadOnly">
+            <summary>
+            Only check threads.
+            </summary>
+        </member>
+        <member name="F:NtObjectManager.ProcessCheckMode.ProcessAndThread">
+            <summary>
+            Check both processes and threads.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetAccessibleProcessCmdlet">
+            <summary>
+            <para type="synopsis">Get a list of processes and/or threads that can be opened by a specified token.</para>
+            <para type="description">This cmdlet checks all processes and threads and tries to determine
+            if one or more specified tokens can open them to them. If no tokens are specified then the 
+            current process token is used.</para>
+            </summary>
+            <remarks>For best results this command should be run as an administrator with SeDebugPrivilege.</remarks>
+            <example>
+              <code>Get-AccessibleProcess</code>
+              <para>Check all accessible processes for the current process token.</para>
+            </example>
+            <example>
+              <code>Get-AccessibleProcess -ProcessIds 1234,5678</code>
+              <para>>Check all accessible processes for the process tokens of PIDs 1234 and 5678</para>
+            </example>
+            <example>
+              <code>$token = Get-NtToken -Primary -Duplicate -IntegrityLevel Low&#x0A;Get-AccessibleProcess -Tokens $token -AccessRights GenericWrite</code>
+              <para>Get all processes with can be written by a low integrity copy of current token.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleProcessCmdlet.CheckMode">
+            <summary>
+            <para type="description">Specify what objects to check for.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleProcessCmdlet.ThreadAccessRights">
+            <summary>
+            <para type="description">Specify specific access rights for threads.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetAccessibleProcessCmdlet.ShowDeadProcesses">
+            <summary>
+            <para type="description">Specify that dead processes should be shown.</para>
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtEventCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT event object by path.</para>
+            <para type="description">This cmdlet opens an existing NT event object. The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtEvent \BaseNamedObjects\ABC</code>
+              <para>Get an event object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = Get-NtEvent ABC -Root $root</code>
+              <para>Get an event object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$obj = Get-NtEvent -Path \BaseNamedObjects\ABC&#x0A;$obj.Wait()</code>
+              <para>Get an event object, wait for it to be set.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtEvent -Path \BaseNamedObjects\ABC&#x0A;$obj.Set()</code>
+              <para>Get an event object, and set it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtEventCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtEventCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtEventCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtEventCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtEventCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT event object.</para>
+            <para type="description">This cmdlet creates a new NT event object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter. If no path is specified than an unnamed object will be created which
+            can only be duplicated by handle.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtEvent</code>
+              <para>Create a new anonymous event object.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtEvent \BaseNamedObjects\ABC</code>
+              <para>Create a new event object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = New-NtEvent ABC -Root $root</code>
+              <para>Create a new event object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$mutant = New-NtEvent -InitialState $true</code>
+              <para>Create a new anonymous event object with it initially set.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtEvent -Path \BaseNamedObjects\ABC&#x0A;$obj.Wait()</code>
+              <para>Create a new event object, wait for it to be set.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtEvent -Path \BaseNamedObjects\ABC&#x0A;$obj.Set()</code>
+              <para>Create a new event object, and set it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.NewNtEventCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.NewNtEventCmdlet.InitialState">
+            <summary>
+            <para type="description">The initial state of the event object.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtEventCmdlet.EventType">
+            <summary>
+            <para type="description">The type of event to create.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtEventCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtProcessCmdlet">
+            <summary>
+            <para type="synopsis">Get NT processes.</para>
+            <para type="description">This cmdlet gets all accessible processes on the system. You can specify a specific process by setting the -ProcessId or -Current parameters.</para>
+            <para>Note that process objects need to be disposed of after use, therefore capture them in a Dispose List or manually Close them once used. You can specify
+            some specific filters for the list of processes returned. The advantage of filtering here is the created NtProcess objects will be automatically disposed of
+            when not needed.</para>
+            </summary>
+            <example>
+              <code>$ps = Get-NtProcess</code>
+              <para>Get all NT processes accessible by the current user.</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess -Current</code>
+              <para>Get reference to current process.</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -Access DupHandle</code>
+              <para>Get all NT processes accessible by the current user for duplicate handle access.</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess 1234</code>
+              <para>Get a specific process</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess 1234 -Access QueryInformation&#x0A;$p.CommandLine</code>
+              <para>Get a command line of a specific process.</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess 1234 -Access QueryInformation&#x0A;$p.FullPath</code>
+              <para>Get a native image path of a specific process.</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess $pid</code>
+              <para>Get the current process by process ID.</para>
+            </example>
+            <example>
+              <code>$p = Get-NtProcess 1234 -OpenParent</code>
+              <para>Get the parent of a specific process.</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -Name notepad.exe</code>
+              <para>Get all processes with the name notepad.exe.</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -CommandLine hello</code>
+              <para>Get all processes with where the command line contains the string "hello".</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -Name notepad.exe -CommandLine hello</code>
+              <para>Get all processes with the name notepad.exe where the command line contains the string "hello".</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -FilterScript { param($p); $p.SessionId -eq 1 }</code>
+              <para>Get all processes in session 1.</para>
+            </example>
+            <example>
+              <code>$ps = Get-NtProcess -FilterScript { param($p); $p.Mitigations.DisallowWin32kSystemCalls -eq $true }</code>
+              <para>Get all processes with the Disallow Win32k System Calls mitigation policy.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.ProcessId">
+            <summary>
+            <para type="description">Specify a process ID to open.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.OpenParent">
+            <summary>
+            <para type="description">When opening a specific process choose whether to open its parent instead.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.OpenOwner">
+            <summary>
+            <para type="description">When opening a specific process choose whether to open its 
+            owner process (which is typically a console host) instead.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.Name">
+            <summary>
+            <para type="description">Specify a executable name to filter the list on.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.CommandLine">
+            <summary>
+            <para type="description">Specify sub-string in the command line to filter the list on. If Name is also specified this will just select processes with that name with this sub-string.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.FilterScript">
+            <summary>
+            <para type="description">Specify an arbitrary filter script.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.Access">
+            <summary>
+            <para type="description">Specify access rights for each process opened.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.Current">
+            <summary>
+            <para type="description">Open current process.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtProcessCmdlet.FromSystem">
+            <summary>
+            <para type="description">When getting all processes only get the system information process list.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtProcessCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtProcessCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtSectionCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT section object by path.</para>
+            <para type="description">This cmdlet opens an existing NT section object. The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtSection \BaseNamedObjects\ABC</code>
+              <para>Get a section object with an absolute path.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtSectionCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtSectionCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtSectionCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtSectionCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtSectionCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT section object.</para>
+            <para type="description">This cmdlet creates a new NT section object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter. If no path is specified than an unnamed object will be created which
+            can only be duplicated by handle.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtSection -Size 4096</code>
+              <para>Create a new anonymous section object of size 4096 bytes.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtSection \BaseNamedObjects\ABC -Size 4096</code>
+              <para>Create a new section object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$file = Get-NtFile \??\C:\SomeFile&#x0A;$obj = New-NtSection -File $file -Protection ReadOnly</code>
+              <para>Create a new section object backed by a file with read only protection.
+              </para>
+            </example>
+            <example>
+              <code>$file = Get-NtFile \??\C:\Windows\notepad.exe&#x0A;$obj = New-NtSection -File $file -SectionAttributes Image -Protection ReadOnly</code>
+              <para>Create a new image section object backed by an executable file.
+              </para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.NewNtSectionCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.NewNtSectionCmdlet.File">
+            <summary>
+            <para type="description">An existing file to use as backing for the section.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSectionCmdlet.Size">
+            <summary>
+            <para type="description">An optional size for the section.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSectionCmdlet.Protection">
+            <summary>
+            <para type="description">Memory allocation protection flags.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSectionCmdlet.SectionAttributes">
+            <summary>
+            <para type="description">Section attribute flags.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtSectionCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtSectionCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtSemaphoreCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT semaphore object by path.</para>
+            <para type="description">This cmdlet opens an existing NT semaphore object (also known as a mutex). The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtSemaphore \BaseNamedObjects\ABC</code>
+              <para>Get a semaphore object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = Get-NtSemaphore ABC -Root $root</code>
+              <para>Get a semaphore object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$obj = Get-NtSemaphore -Path \BaseNamedObjects\ABC&#x0A;$obj.Wait()&#x0A;# Do something in lock...&#x0A;$obj.Release()</code>
+              <para>Get a semaphore object, acquire the lock via Wait and Release it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtSemaphoreCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtSemaphoreCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtSemaphoreCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtSemaphoreCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtSemaphoreCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT semaphore object.</para>
+            <para type="description">This cmdlet creates a new NT semaphore object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter. If no path is specified than an unnamed object will be created which
+            can only be duplicated by handle.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtSemaphore</code>
+              <para>Create a new anonymous semaphore object.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtSemaphore \BaseNamedObjects\ABC</code>
+              <para>Create a new semaphore object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = New-NtSemaphore ABC -Root $root</code>
+              <para>Create a new semaphore object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$semaphore = New-NtSemaphore -MaximumCount 10</code>
+              <para>Create a new anonymous semaphore object a maximum count of 10.</para>
+            </example>
+            <example>
+              <code>$semaphore = New-NtSemaphore -InitialCount 1</code>
+              <para>Create a new anonymous semaphore object the initial count set to 1.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtSemaphore -InitialCount 1&#x0A;$semaphore.Wait(10)&#x0A;# Do something with the semaphore...&#x0A;$obj.Release(1)</code>
+              <para>Create a new anonymous semaphore object with an initial count of 1, decrement the semaphore via Wait with a 10 second wait and Release it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.NewNtSemaphoreCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSemaphoreCmdlet.InitialCount">
+            <summary>
+            <para type="description">Specify the intial count of the semaphore.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSemaphoreCmdlet.MaximumCount">
+            <summary>
+            <para type="description">Specify the maximum count of the semaphore.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtSemaphoreCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtSemaphoreCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtThreadCmdlet">
+            <summary>
+            <para type="synopsis">Get NT threads.</para>
+            <para type="description">This cmdlet gets all accessible threads on the system. You can specify a specific thread by setting the -ThreadId parameter.</para>
+            <para>Note that thread objects need to be disposed of after use, therefore capture them in a Dispose List or manually Close them once used.</para>
+            </summary>
+            <example>
+              <code>$ts = Get-NtThread</code>
+              <para>Get all NT threads accessible by the current user.</para>
+            </example>
+            <example>
+              <code>$ts = Get-NtThread -Access Impersonate</code>
+              <para>Get all NT threads accessible by the current user for impersonate access.</para>
+            </example>
+            <example>
+              <code>$t = Get-NtThread 1234</code>
+              <para>Get a specific thread.</para>
+            </example>
+            <example>
+              <code>$t = Get-NtThread -ProcessId 1234</code>
+              <para>Get threads for a specific process.</para>
+            </example>
+            <example>
+              <code>$ts = Get-NtThread -FilterScript { param($t); Use-NtObject($k = $t.OpenToken()) { $k -ne $null } }</code>
+              <para>Get threads which have impersonation tokens set.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtThreadCmdlet.ThreadId">
+            <summary>
+            <para type="description">Specify a thread ID to open.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtThreadCmdlet.ProcessId">
+            <summary>
+            <para type="description">Specify a process ID to enumerate only its threads.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtThreadCmdlet.FilterScript">
+            <summary>
+            <para type="description">Specify an arbitrary filter script.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtThreadCmdlet.Access">
+            <summary>
+            <para type="description">Specify access rights for each thread opened.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtThreadCmdlet.FromSystem">
+            <summary>
+            <para type="description">When getting all threads only get the system information thread list.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtThreadCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtThreadCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtTokenCmdlet">
+            <summary>
+            <para type="synopsis">Open an NT token from different sources.</para>
+            <para type="description">This cmdlet gets a token from one of multiple possible sources. You can specify either a Primary process token, a Thread impersonation token, an Effective token, a Clipboard token a Logon/S4U token or the anonymous token.</para>
+            <para>Note that tokens objects need to be disposed of after use, therefore capture them in Use-NtObject or manually Close them once used.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtToken -Primary</code>
+              <para>Get current process' primary token.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary -Access Duplicate</code>
+              <para>Get current process' primary token for Duplicate access.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary -Duplicate -TokenType Impersonation -ImpersonationLevel Impersonation</code>
+              <para>Get current process' primary token and convert to an impersonation token.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary -Duplicate -TokenType Primary -IntegrityLevel Low</code>
+              <para>Get current process token, duplicate as primary and set integrity level to Low.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtTokenPrimary -Access AdjustPrivileges&#x0A;$obj.SetPrivilege("SeDebugPrivilege", $true)</code>
+              <para>Enable debug privilege on current token.</para>
+            </example>
+            <example>
+              <code>$process = Get-NtProcess -ProcessId 1234&#x0A;$obj = Get-NtToken -Primary -Process $process</code>
+              <para>Get process token for a specific process.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary -ProcessId 1234</code>
+              <para>Get process token for a specific process by process ID.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary&#x0A;$obj.GetPrivileges()</code>
+              <para>Query the privileges of a token.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Primary&#x0A;$obj.GetGroups()</code>
+              <para>Query the groups of a token.</para>
+            </example>
+            <example>
+              <code>$thread = Get-NtThread -ThreadId 1234&#x0A;$obj = Get-NtToken -Impersonation -Thread $thread</code>
+              <para>Get the impersonation token for a specific thread.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Impersonation -ThreadId 1234</code>
+              <para>Get impersonation token for a specific thread by ID.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Effective -ThreadId 1234</code>
+              <para>Get the effective token for a specific thread by ID.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Clipboard</code>
+              <para>Get the current clipboard token.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Logon -User Bob -Password BobP@ssword</code>
+              <para>Get network logon token for user Bob in the current domain with password BobP@ssword.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Logon -User Bob -Password BobP@ssword -Domain BADGERS -LogonType Interactive</code>
+              <para>Get interactive logon token for BADGERS\\Bob with password BobP@ssword.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -S4U -User Bob -Domain BADGERS</code>
+              <para>Get S4U network logon token for BADGERS\\Bob with no password.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtToken -Anonymous</code>
+              <para>Get the anonymous logon token.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Access">
+            <summary>
+            <para type="description">Specify access rights for the token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Duplicate">
+            <summary>
+            <para type="description">Return a duplicated version of the token. The type of token is specified using -TokenType and -ImpersonationLevel</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.TokenType">
+            <summary>
+            <para type="description">Specify the type of token to create if -Duplicate is specified.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.ImpersonationLevel">
+            <summary>
+            <para type="description">Specify the impersonation level of the token to create if -Duplicate is specified and TokenType is Impersonation.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.IntegrityLevel">
+            <summary>
+            <para type="description">Specify the integrity level of the token to if -Duplicate is specified.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Primary">
+            <summary>
+            <para type="description">Get the primary token for a process.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Process">
+            <summary>
+            <para type="description">Specify the process to open the token from. If not set will use the current process.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.ProcessId">
+            <summary>
+            <para type="description">Specify the process to open the token from as a PID. Overridden by the Process parameter.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Impersonation">
+            <summary>
+            <para type="description">Get an impersonation token for a thread.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Effective">
+            <summary>
+            <para type="description">If thread impersonation token doesn't exist then get the primary token for the associated process. This is getting the "effective" token for the thread.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Thread">
+            <summary>
+            <para type="description">Specify the thread to open the token from. If not set will use the current thread.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.ThreadId">
+            <summary>
+            <para type="description">Specify the thread to open the token from by ID.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.OpenAsSelf">
+            <summary>
+            <para type="description">Specify the token should be open with the process identity rather than the impersonated identity.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Clipboard">
+            <summary>
+            <para type="description">Get the current clipboard token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Logon">
+            <summary>
+            <para type="description">Get a logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.S4U">
+            <summary>
+            <para type="description">Get an Services for User (S4U) logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.User">
+            <summary>
+            <para type="description">Specify username for logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Password">
+            <summary>
+            <para type="description">Specify password for logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Domain">
+            <summary>
+            <para type="description">Specify domain for logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.LogonType">
+            <summary>
+            <para type="description">Specify logon type for logon token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTokenCmdlet.Anonymous">
+            <summary>
+            <para type="description">Get anonymous token.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtTokenCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtTokenCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtFilteredTokenCmdlet">
+            <summary>
+            <para type="synopsis">Filter an existing NT token.</para>
+            <para type="description">This cmdlet takes a token and filters (also referred to as restricting) it.</para>
+            <para>Note that tokens objects need to be disposed of after use, therefore capture them in Use-NtObject or manually Close them once used.</para>
+            </summary>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtFilteredToken $tmp -Flags DisableMaxPrivileges }</code>
+              <para>Get current process' primary token and disable the maximum privileges.</para>
+            </example>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtFilteredToken $tmp -SidsToDisable "Everyone","BA" }</code>
+              <para>Get current process' primary token and set Everyone and Built Administrators groups to deny only.</para>
+            </example>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtFilteredToken $tmp -SidsToDisable "Everyone","BA" }</code>
+              <para>Get current process' primary token and set Everyone and Built Administrators groups to deny only.</para>
+            </example>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtFilteredToken $tmp -RestrictedSids $tmp.Groups }</code>
+              <para>Get current process' primary token and add all groups as restricted SIDs.</para>
+            </example>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtFilteredToken $tmp -Flags LuaToken }</code>
+              <para>Get current process' primary token and convert it to a LUA token.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtFilteredTokenCmdlet.Token">
+            <summary>
+            <para type="description">Specify access rights for the token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtFilteredTokenCmdlet.PrivilegesToDelete">
+            <summary>
+            <para type="description">Specify list of privileges to delete.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtFilteredTokenCmdlet.SidsToDisable">
+            <summary>
+            <para type="description">Specify list group SIDS to disable.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtFilteredTokenCmdlet.RestrictedSids">
+            <summary>
+            <para type="description">Specify list restricted SIDS to add to token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtFilteredTokenCmdlet.Flags">
+            <summary>
+            <para type="description">Specify filter flags.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtFilteredTokenCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtLowBoxTokenCmdlet">
+            <summary>
+            <para type="synopsis">Get a LowBox version of an existing NT token.</para>
+            <para type="description">This cmdlet takes a token and creates a new lowbox token from it.</para>
+            <para>Note that tokens objects need to be disposed of after use, therefore capture them in Use-NtObject or manually Close them once used.</para>
+            </summary>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtLowBoxToken $tmp -PackageSid "Application.Name" }</code>
+              <para>Get current process' primary token create a lowbox token with a named package.</para>
+            </example>
+            <example>
+              <code>$token = Use-NtObject($tmp = Get-NtToken -Primary) { Get-NtLowBoxToken $tmp -PackageSid "S-1-15-2-1-2-3-4-5-6-7" }</code>
+              <para>Get current process' primary token create a lowbox token with a package Sid.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtLowBoxTokenCmdlet.Token">
+            <summary>
+            <para type="description">Specify access rights for the token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtLowBoxTokenCmdlet.PackageSid">
+            <summary>
+            <para type="description">Specify package SID or a name.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtLowBoxTokenCmdlet.RestrictedPackageName">
+            <summary>
+            <para type="description">Specify an additional restricted name for the package SID.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtLowBoxTokenCmdlet.CapabilitySids">
+            <summary>
+            <para type="description">Specify list of capability SIDS to add to token.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtLowBoxTokenCmdlet.Handles">
+            <summary>
+            <para type="description">Specify list of handles to capture with lowbox token..</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtLowBoxTokenCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtHandleCmdlet">
+            <summary>
+            <para type="synopsis">Get NT handle information.</para>
+            <para type="description">This cmdlet gets handle information for all process on the system. You can specify a specific process by setting the -ProcessId parameter.</para>
+            <para>By default extra information about the handle will be queried. This comes at a cost and could cause the process to hang, therefore if you don't want to query
+            pass the -NoQuery parameter.</para>
+            </summary>
+            <example>
+              <code>Get-NtHandle</code>
+              <para>Get all NT handles.</para>
+            </example>
+            <example>
+              <code>Get-NtHandle 1234</code>
+              <para>Get all NT handles filtered to a specific Process ID</para>
+            </example>
+            <example>
+              <code>Get-NtHandle $pid</code>
+              <para>Get all NT handles for the current process.</para>
+            </example>
+            <example>
+              <code>Get-NtHandle 1234 -NoQuery</code>
+              <para>Get all NT handles filtered to a specific Process ID but don't try and query information about the handle such as name.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetNtHandleCmdlet.ProcessId">
+            <summary>
+            <para type="description">Specify a process ID to filter handles on.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtHandleCmdlet.NoQuery">
+            <summary>
+            <para type="description">Specify that the returned handle entries should not be queried for additional information.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtHandleCmdlet.ObjectTypes">
+            <summary>
+            <para type="description">Specify list of object types to filter handles.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtHandleCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtHandleCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtDirectoryCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT object directory.</para>
+            <para type="description">This cmdlet opens an existing NT object directory. It's possible to open a directory by its NT path, such as \Some\Path
+            or it can also open a private namespace which isn't represented by an accessible NT path but instead uses a boundary descriptor.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtDirectory \BaseNamedObjects</code>
+              <para>Get a directory object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = Get-NtDirectory ABC -Root $root</code>
+              <para>Get a mutant object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$obj = Get-NtDirectory -Path \BaseNamedObjects&#x0A;$obj.Query()</code>
+              <para>Get a directory object and query its list of entries.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtDirectory -PrivateNamespaceDescriptor WD:LW@ABC</code>
+              <para>Get a private namespace directory object with Everyone and Low Mandatory Level SIDs and name ABC.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+            <para type="link">https://msdn.microsoft.com/en-us/library/windows/desktop/ms684318(v=vs.85).aspx</para>
+            <para type="link">https://msdn.microsoft.com/en-us/library/windows/desktop/ms682121(v=vs.85).aspx</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtDirectoryCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtDirectoryCmdlet.PrivateNamespaceDescriptor">
+            <summary>
+            <para type="description">A string format of a private namespace boundary descriptor.
+            Uses the form [SID[:SID...]@]NAME where SID is an SDDL version of a SID to add to the
+            boundary (such as S-X-X-X or WD) and NAME is the arbitrary name.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtDirectoryCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtDirectoryCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtDirectoryCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT object directory by path.</para>
+            <para type="description">This cmdlet creates a new NT object directory. It's possible to create a directory by its NT path, such as \Some\Path
+            or it can also create a new private namespace which isn't represented by an accessible NT path but instead uses a boundary descriptor.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtDirectory</code>
+              <para>Create a new anonymous directory object.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtDirectory \BaseNamedObjects\ABC</code>
+              <para>Create a new directory object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = New-NtDirectory ABC -Root $root</code>
+              <para>Create a new directory object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$shadow = Get-NtDirectory \SomeDir&#x0A;$obj = New-NtDirectory \BaseNamedObjects\ABC -ShadowDirectory $shadow</code>
+              <para>Create a new directory object with a shadow directory.
+              </para>
+            </example>
+            <example>
+              <code>$obj = New-NtDirectory -PrivateNamespaceDescriptor WD:LW@ABC</code>
+              <para>Create a new private namespace directory object with Everyone and Low Mandatory Level SIDs and name ABC.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+            <para type="link">https://msdn.microsoft.com/en-us/library/windows/desktop/ms682419%28v=vs.85%29.aspx</para>
+            <para type="link">https://msdn.microsoft.com/en-us/library/windows/desktop/ms682121(v=vs.85).aspx</para>
+        </member>
+        <member name="P:NtObjectManager.NewNtDirectoryCmdlet.ShadowDirectory">
+            <summary>
+            <para type="description">Specifies another NT directory object to use as a shadown directory.
+            This changes the lookup operation so that if an entry isn't in the created directory it will try
+            and look it up in the shadown instead.
+            </para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtDirectoryCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtDirectoryCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtFileCmdlet">
+            <summary>
+            <para type="synopsis">Open a existing NT file object.</para>
+            <para type="description">This cmdlet opens a existing NT file object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter. To simply calling it's also possible to specify the
+            path in a Win32 format when using the -Win32Path parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtFile \??\C:\Windows\Notepad.exe</code>
+              <para>Open a file object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtFile \??\C:\Windows&#x0A;$obj = Get-NtFile Notepad.exe -Root $root</code>
+              <para>Open a file object with a relative path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtFile c:\Windows\Notepad.exe -Win32Path</code>
+              <para>Open a file object with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtFile ..\..\..\Windows\Notepad.exe -Win32Path</code>
+              <para>Open a file object with a relative win32 path.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtFileCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtFileCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtFileCmdlet.ShareMode">
+            <summary>
+            <para type="description">The access share mode to open the file with.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtFileCmdlet.Options">
+            <summary>
+            <para type="description">The options to open the file with.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtFileCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtFileCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtFileCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT file object.</para>
+            <para type="description">This cmdlet creates a new NT file object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtFile \??\C:\Windows\Temp\abc.txt</code>
+              <para>Creates a new file object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtFile \??\C:\Windows\Temp\abc.txt -Attributes Hidden</code>
+              <para>Creates a new file object with an absolute path, with the hidden attribute.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtFile \??\C:\Windows&#x0A;$obj = New-NtFile Temp\abc.txt -Root $root</code>
+              <para>Creates a new file object with a relative path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtFile c:\Windows\Temp\abc.txt -Win32Path</code>
+              <para>Creates a new file object with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtFile \??\C:\Windows\Temp\abc.txt -Disposition OpenIf</code>
+              <para>Creates a new file object with an absolute path. If the file already exists then open it rather than failing.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtFile \??\C:\Windows\Temp\abc.txt -Disposition Supersede</code>
+              <para>Creates a new file object with an absolute path. If the file already exists then replace it with the new file.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtFile \??\C:\Windows\Temp\abc.txt -Options SynchronousIoNonAlert -Access GenericRead,GenericWrite,Synchronize&#x0A;$stm = $obj.ToStream($true)&#x0A;$stm.WriteByte(1)</code>
+              <para>Creates a new file object with an absolute path then writes data to it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.NewNtFileCmdlet.Attributes">
+            <summary>
+            <para type="description">Specify the file attributes for the new file.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtFileCmdlet.Disposition">
+            <summary>
+            <para type="description">Specify the disposition for creating the file.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtFileCmdlet.EaBuffer">
+            <summary>
+            <para type="description">Specify an EA buffer to pass to the create file call.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtFileCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtFileCmdlet.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtNamedPipeFileCmdlet">
+            <summary>
+            <para type="synopsis">Opens an existing NT named pipe file object.</para>
+            <para type="description">This cmdlet opens an existing NT named pipe file object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter. This only works if the caller has permission to access the
+            pipe server object and the maximum number of instances is not exceeded.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtNamedPipeFile \??\pipe\abc</code>
+              <para>Opens an existing file named pipe object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtNamedPipeFile \\.\pipe\abc -Win32Path</code>
+              <para>Opens an existing file named pipe object with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtNamedPipeFile \??\pipe\abc -Disposition OpenIf</code>
+              <para>Opens an existing file named pipe object with an absolute path. If the file already exists then open it rather than failing.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtNamedPipeFileCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtNamedPipeFileCmdlet.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.NewNtNamedPipeFileCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT named pipe file object.</para>
+            <para type="description">This cmdlet creates a new NT named pipe file object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtNamedPipeFile \??\pipe\abc</code>
+              <para>Creates a new file named pipe object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtNamedPipeFile \??\pipe\abc -MaximumInstances 100</code>
+              <para>Creates a new file named pipe object with an absolute path and with a maximum of 100 instances.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtNamedPipeFile \??\pipe\abc -UnlimitedInstances</code>
+              <para>Creates a new file named pipe object with an absolute path and with a unlimited maximum number of instances.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtNamedPipeFile \\.\pipe\abc -Win32Path</code>
+              <para>Creates a new file named pipe object with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtNamedPipeFile \??\pipe\abc -Disposition OpenIf</code>
+              <para>Creates a new file named pipe object with an absolute path. If the file already exists then open it rather than failing.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.Disposition">
+            <summary>
+            <para type="description">Specify the disposition for creating the file.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.DefaultTimeoutMs">
+            <summary>
+            <para type="description">Specify the default timeout for the pipe in MS</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.PipeType">
+            <summary>
+            <para type="description">Specify the pipe type.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.ReadMode">
+            <summary>
+            <para type="description">Specify the pipe read mode.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.CompletionMode">
+            <summary>
+            <para type="description">Specify the pipe completion mode.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.MaximumInstances">
+            <summary>
+            <para type="description">Specify the maximum number of pipe instances (-1 is infinite).</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.UnlimitedInstances">
+            <summary>
+            <para type="description">If specified an unlimited number of instances of this pipe can be created.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.InputQuota">
+            <summary>
+            <para type="description">Specify the pipe input quota (0 is default).</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtNamedPipeFileCmdlet.OutputQuota">
+            <summary>
+            <para type="description">Specify the pipe output quota (0 is default).</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtNamedPipeFileCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtNamedPipeFileCmdlet.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.NewNtMailslotFileCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT mailslot file object.</para>
+            <para type="description">This cmdlet creates a new NT mailslot file object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtMailslotFile \??\mailslot\abc</code>
+              <para>Creates a new file mailslot object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtMailslotFile \\.\mailslot\abc -Win32Path</code>
+              <para>Creates a new file mailslot object with an absolute win32 path.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.NewNtMailslotFileCmdlet.DefaultTimeoutMs">
+            <summary>
+            <para type="description">Specify the default timeout for the mailslot in MS (-1 for no timeout)</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtMailslotFileCmdlet.MaximumMessageSize">
+            <summary>
+            <para type="description">Specify the maximum message size (0 means any size)</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtMailslotFileCmdlet.MailslotQuota">
+            <summary>
+            <para type="description">Specify the mailslot quota.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtMailslotFileCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtMailslotFileCmdlet.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtFileReparsePointCmdlet">
+            <summary>
+            <para type="synopsis">Open and reads the reparse point buffer for file.</para>
+            <para type="description">This cmdlet opens a existing NT file object and reads out the reparse point buffer data. 
+            The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.
+            To simplify calling it's also possible to specify the path in a Win32 format when using the -Win32Path parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtFileReparsePoint \??\C:\XYZ</code>
+              <para>Reads the reparse point with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtFile \??\C:\&#x0A;$obj = Get-NtFileReparsePoint XYZ -Root $root</code>
+              <para>Reads the reparse point with a relative path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtFileReparsePoint C:\XYZ -Win32Path</code>
+              <para>Reads the reparse point with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtFileReparsePoint ..\..\..\XYZ -Win32Path</code>
+              <para>Reads the reparse point with a relative win32 path.</para>
+            </example>
+        </member>
+        <member name="M:NtObjectManager.GetNtFileReparsePointCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtFileReparsePointCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.RemoveNtFileReparsePointCmdlet">
+            <summary>
+            <para type="synopsis">Removes the reparse point buffer for file.</para>
+            <para type="description">This cmdlet removes the reparse point buffer from an existing NT file object. 
+            The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.
+            To simplify calling it's also possible to specify the path in a Win32 format when using the -Win32Path parameter.
+            It will return the original reparse buffer that was removed.</para>
+            </summary>
+            <example>
+              <code>Remove-NtFileReparsePoint \??\C:\XYZ</code>
+              <para>Remove the reparse point with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtFile \??\C:\&#x0A;Remove-NtFileReparsePoint XYZ -Root $root</code>
+              <para>Remove the reparse point with a relative path.</para>
+            </example>
+            <example>
+              <code>Remove-NtFileReparsePoint C:\XYZ -Win32Path</code>
+              <para>Remove the reparse point with an absolute win32 path.</para>
+            </example>
+            <example>
+              <code>Remove-NtFileReparsePoint ..\..\..\XYZ -Win32Path</code>
+              <para>Remove the reparse point with a relative win32 path.</para>
+            </example>
+        </member>
+        <member name="M:NtObjectManager.RemoveNtFileReparsePointCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.RemoveNtFileReparsePointCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtKeyCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT key object by path.</para>
+            <para type="description">This cmdlet opens an existing NT key object. The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtKey \Registry\Machine\Software</code>
+              <para>Get a key object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtKey \Registry\Machine&#x0A;$obj = Get-NtKey Software -Root $root</code>
+              <para>Get a key object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$obj = Get-NtKey \Registry\Machine\Software&#x0A;$obj.QueryKeys()</code>
+              <para>Get a key object, and enumerate its subkeys</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtKey \Registry\Machine\Software&#x0A;$obj.QueryValues()</code>
+              <para>Get a key object, and enumerate its values</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtKeyCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtKeyCmdlet.Options">
+            <summary>
+            <para type="description">Options to use when opening/creating the key.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtKeyCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtKeyCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtKeyCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtKeyCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT key object.</para>
+            <para type="description">This cmdlet creates a new NT key object. The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtKey \Registry\Machine\Software\ABC</code>
+              <para>Create a new key object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtKey -Path \Registry\Machine\Software\ABC&#x0A;$obj.SetValue("ValueName", String, "DataValue")</code>
+              <para>Create a new event object and set a string value.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.NewNtKeyCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.AddNtKeyHiveCmdlet">
+            <summary>
+            <para type="synopsis">Loads a new registry hive.</para>
+            <para type="description">This cmdlet loads a registry hive to somewhere in the registry namespace. If the hive file doesn't exist it will be created.</para>
+            </summary>
+            <example>
+              <code>$token = Get-NtTokenPrimary&#x0A;$token.SetPrivilege("SeRestorePrivilege", $true)&#x0A;$obj = Add-NtKey \??\C:\Windows\Temp\test.hiv \Registry\Machine\ABC</code>
+              <para>Load a hive to a new attachment point.</para>
+            </example>
+            <example>
+              <code>$obj = Add-NtKey \??\C:\Windows\Temp\test.hiv \Registry\Machine\ABC -LoadFlags AppKey</code>
+              <para>Load a app hive to a new attachment point (can be done without privileges).</para>
+            </example>
+            <example>
+              <code>$obj = Add-NtKey \??\C:\Windows\Temp\test.hiv \Registry\Machine\ABC -LoadFlags AppKey,ReadOnly</code>
+              <para>Load a app hive to a new attachment point read-only.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.AddNtKeyHiveCmdlet.KeyPath">
+            <summary>
+            <para type="description">Specifes the path to where the hive should be loaded.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.AddNtKeyHiveCmdlet.LoadFlags">
+            <summary>
+            <para type="description">Specifes the flags for loading the hive.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.AddNtKeyHiveCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtMutantCmdlet">
+            <summary>
+            <para type="synopsis">Open a NT mutant object by path.</para>
+            <para type="description">This cmdlet opens an existing NT mutant object (also known as a mutex). The absolute path to the object in the NT object manager name space must be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtMutant \BaseNamedObjects\ABC</code>
+              <para>Get a mutant object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = Get-NtMutant ABC -Root $root</code>
+              <para>Get a mutant object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$obj = Get-NtMutant -Path \BaseNamedObjects\ABC&#x0A;$obj.Wait()&#x0A;# Do something in lock...&#x0A;$obj.Release()</code>
+              <para>Get a mutant object, acquire the lock via Wait and Release it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtMutantCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtMutantCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtMutantCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtMutantCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtMutantCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT mutant object.</para>
+            <para type="description">This cmdlet creates a new NT mutant object (also known as a mutex). The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter. If no path is specified than an unnamed object will be created which
+            can only be duplicated by handle.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtMutant</code>
+              <para>Create a new anonymous mutant object.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtMutant \BaseNamedObjects\ABC</code>
+              <para>Create a new mutant object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \BaseNamedObjects&#x0A;$obj = New-NtMutant ABC -Root $root</code>
+              <para>Create a new mutant object with a relative path.
+              </para>
+            </example>
+            <example>
+              <code>$mutant = New-NtMutant -InitialOwner</code>
+              <para>Create a new anonymous mutant object with the caller as the initial owner.</para>
+            </example>
+            <example>
+              <code>$obj = New-NtMutant&#x0A;$mutant.Wait()&#x0A;# Do something in lock...&#x0A;$obj.Release()</code>
+              <para>Create a new anonymous mutant object, acquire the lock via Wait and Release it.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.NewNtMutantCmdlet.InitialOwner">
+            <summary>
+            <para type="description">Specify to indicate the caller is the initial owner of the mutant.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtMutantCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.NewNtMutantCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NtObjectBaseCmdlet">
+            <summary>
+            Base object cmdlet.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.Root">
+            <summary>
+            <para type="description">An existing open NT object to use when Path is relative.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.Win32Path">
+            <summary>
+            <para type="description">Use a Win32 path for lookups. For NT objects this means relative to BNO, for files means a DOS style path.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.ObjectAttributes">
+            <summary>
+            <para type="description">Object Attribute flags used during Open/Create calls.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.SecurityDescriptor">
+            <summary>
+            <para type="description">Set to provide an explicit security descriptor to a newly created object.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.Sddl">
+            <summary>
+            <para type="description">Set to provide an explicit security descriptor to a newly created object in SDDL format. Overriddes SecurityDescriptor.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.SecurityQualityOfService">
+            <summary>
+            <para type="description">Set to provide an explicit security quality of service when opening files/namedpipes.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.CloseRoot">
+            <summary>
+            <para type="description">Automatically close the Root object when this cmdlet finishes processing. Useful for pipelines.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdlet.CreateDirectories">
+            <summary>
+            <para type="description">Create any necessary NtDirectory objects to create the required object. Will return the created directories as well as the object in the output.
+            The new object will be the first entry in the list. This doesn't work when opening an object or creating keys/files.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.#ctor">
+            <summary>
+            Base constructor.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.VerifyParameters">
+            <summary>
+            Verify the parameters, should throw an exception if parameters are invalid.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.Dispose(System.Boolean)">
+            <summary>
+            Dispose object.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.Finalize">
+            <summary>
+            Finalizer.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdlet.System#IDisposable#Dispose">
+            <summary>
+            Dispose object.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.NtObjectBaseCmdletWithAccess`1">
+            <summary>
+            Base object cmdlet which has an access parameter.
+            </summary>
+            <typeparam name="T">The access enumeration type.</typeparam>
+        </member>
+        <member name="P:NtObjectManager.NtObjectBaseCmdletWithAccess`1.Access">
+            <summary>
+            <para type="description">Specify the access rights for a new handle when creating/opening an object.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectBaseCmdletWithAccess`1.#ctor">
+            <summary>
+            Constructor.
+            </summary>        
+        </member>
+        <member name="T:NtObjectManager.GetNtObjectCmdlet">
+            <summary>
+            <para type="synopsis">Open an NT object by path.</para>
+            <para type="description">This cmdlet opens an NT object by its path. The returned object
+            will be a type specific to the actual underlying NT type.
+            </para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtObject \BaseNamedObjects\ABC</code>
+              <para>Get a existing object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtObject \BaseNamedObjects -TypeName Directory</code>
+              <para>Get a existing object with an explicit type.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtObject \BaseNamedObjects&#x0A;$obj = Get-NtObject ABC -Root $root</code>
+              <para>Get an existing object with a relative path.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.GetNtObjectCmdlet.TypeName">
+            <summary>
+            <para type="description">The type of object will try and be determined automatically, however in cases where this isn't possible the NT type name can be specified here.
+            This needs to be a value such as Directory, SymbolicLink, Mutant etc.
+            </para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtObjectCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtObjectCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtObjectCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtObjectCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtSecurityDescriptorCmdlet">
+            <summary>
+            <para type="synopsis">Create a new security descriptor which can be used on NT objects.</para>
+            <para type="description">This cmdlet creates a new instance of a SecurityDescriptor object. This can be 
+            used directly with one of the New-Nt* cmdlets (via the -SecurityDescriptor parameter) or by calling
+            SetSecurityDescriptor on an existing object (assume the object has been opened with the correct permissions.
+            </para>
+            </summary>
+            <example>
+              <code>$sd = New-NtSecurityDescriptor</code>
+              <para>Create a new security descriptor object.</para>
+            </example>
+            <example>
+              <code>$sd = New-NtSecurityDescriptor -Sddl "O:BAG:BAD:(A;;GA;;;WD)"</code>
+              <para>Create a new security descriptor object from an SDDL string</para>
+            </example>
+            <example>
+              <code>$sd = New-NtSecurityDescriptor -NullDacl</code>
+              <para>Create a new security descriptor object with a NULL DACL.</para>
+            </example>
+            <example>
+              <code>$sd = New-NtSecurityDescriptor -Sddl "D:(A;;GA;;;WD)"&#x0A;$obj = New-NtDirectory \BaseNamedObjects\ABC -SecurityDescriptor $sd</code>
+              <para>Create a new object directory with an explicit security descriptor.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.NewNtSecurityDescriptorCmdlet.NullDacl">
+            <summary>
+            <para type="description">Specify to create the security descriptor with a NULL DACL.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSecurityDescriptorCmdlet.Sddl">
+            <summary>
+            <para type="description">Specify to create the security descriptor from an SDDL representation.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NewNtSecurityDescriptorCmdlet.Token">
+            <summary>
+            <para type="description">Specify to create the security descriptor from the default DACL of a token object.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtSecurityDescriptorCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.UseNtObjectCmdlet">
+            <summary>
+            <para type="synopsis">Use an NtObject (or list of NtObject) and automatically close the objects after use.</para>
+            <para type="description">This cmdlet allows you to scope the use of NtObject, similar to the using statement in C#.
+            When the script block passed to this cmdlet goes out of scope the input object is automatically disposed of, ensuring
+            any native resources are closed to prevent leaks.
+            </para>
+            </summary>
+            <example>
+              <code>$ps = Use-NtObject (Get-NtProcess) { param ($ps); $ps | Select-Object Name, CommandLine }</code>
+              <para>Select Name and CommandLine from a list of processes and dispose of the list afterwards.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.UseNtObjectCmdlet.InputObject">
+            <summary>
+            <para type="description">Specify the input object to be disposed.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.UseNtObjectCmdlet.ScriptBlock">
+            <summary>
+            <para type="description">Specify the script block to execute.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.UseNtObjectCmdlet.ProcessRecord">
+            <summary>
+            Overridden process record method
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.NtStatusResult">
+            <summary>
+            The result of an NTSTATUS code lookup.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtStatusResult.Status">
+            <summary>
+            The numeric value of the status code.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtStatusResult.StatusName">
+            <summary>
+            The name of the status code if known.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtStatusResult.Message">
+            <summary>
+            Corresponding message text.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtStatusResult.Win32Error">
+            <summary>
+            Win32 error code.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtStatusCmdlet">
+            <summary>
+            <para type="synopsis">Get known information about an NTSTATUS code.</para>
+            <para type="description">This cmdlet looks up an NTSTATUS code and if possible prints the
+            enumeration name, the message description and the corresponding win32 error.
+            </para>
+            </summary>
+            <example>
+              <code>Get-NtStatus</code>
+              <para>Gets all known NTSTATUS codes defined in this library.</para>
+            </example>
+            /// <example>
+              <code>Get-NtStatus -Status 0xc0000022</code>
+              <para>Gets information about a specific status code.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetNtStatusCmdlet.Status">
+            <summary>
+            <para type="description">Specify a NTSTATUS code to retrieve.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtStatusCmdlet.ProcessRecord">
+            <summary>
+            Process record.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtTypesCmdlet">
+            <summary>
+            <para type="synopsis">Get NT type information.</para>
+            <para type="description">This cmdlet gets NT type information from the operating system. If run without parameters it'll retrieve all types. 
+            You can limit it to only one type using the -TypeName parameter. By default it will used cached versions of the type information as
+            most of the time you don't need information such as how many objects are created, however if you want that current information specify the
+            -CurrentStatus parameter.</para>
+            </summary>
+            <example>
+              <code>Get-NtType</code>
+              <para>Get all NT types.</para>
+            </example>
+            <example>
+              <code>Get-NtType | Where-Object SecurityRequired -eq $False</code>
+              <para>Get all NT types which don't require security.</para>
+            </example>
+            <example>
+              <code>Get-NtType Directory</code>
+              <para>Get the Directory NT type.</para>
+            </example>
+            <example>
+              <code>Get-NtType Directory -CurrentStatus</code>
+              <para>Get the Directory NT type with the current status of all information.</para>
+            </example>
+        </member>
+        <member name="P:NtObjectManager.GetNtTypesCmdlet.TypeName">
+            <summary>
+            <para type="description">Specify a specific NT type to retrieve.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.GetNtTypesCmdlet.CurrentStatus">
+            <summary>
+            <para type="description">If set then will pull the latest information 
+            for the types rather than using cached data.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtTypesCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtObjectManager.GetNtSymbolicLinkCmdlet">
+            <summary>
+            <para type="synopsis">Open a existing NT symbolic link object.</para>
+            <para type="description">This cmdlet opens a existing NT symbolic link object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to open the object relative to an existing object by specified the -Root parameter.</para>
+            </summary>
+            <example>
+              <code>$obj = Get-NtSymbolicLink \DosDevices\ABC</code>
+              <para>Open a symbolic link object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \DosDevices&#x0A;$obj = Get-NtSymbolicLink ABC -Root $root</code>
+              <para>Open a symbolic link object with a relative path.</para>
+            </example>
+            <example>
+              <code>$obj = Get-NtSymbolicLink \DosDevices\ABC&#x0A;$obj.Query()</code>
+              <para>Open a symbolic link object and query its target.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtSymbolicLinkCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.GetNtSymbolicLinkTargetCmdlet">
+            <summary>
+            <para type="synopsis">Get the target path for an existing NT symbolic link object.</para>
+            <para type="description">This cmdlet opens a existing NT symbolic link object and queries its target path. That can be done using Get-NtSymbolicLink and the Query method but
+            this simplifies the operation so that the object handle doesn't have to be closed.</para>
+            </summary>
+            <example>
+              <code>Get-NtSymbolicLinkTarget \DosDevices\ABC</code>
+              <para>Gets the symbolic link object target with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \DosDevices&#x0A;Get-NtSymbolicLinkTarget ABC -Root $root</code>
+              <para>Gets the symbolic link object target with a relative path.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkTargetCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.GetNtSymbolicLinkTargetCmdlet.Path">
+            <summary>
+            <para type="description">The NT object manager path to the object to use.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkTargetCmdlet.GetPath">
+            <summary>
+            Virtual method to return the value of the Path variable.
+            </summary>
+            <returns>The object path.</returns>
+        </member>
+        <member name="M:NtObjectManager.GetNtSymbolicLinkTargetCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NewNtSymbolicLinkCmdlet">
+            <summary>
+            <para type="synopsis">Create a new NT symbolic link object.</para>
+            <para type="description">This cmdlet creates a new NT symbolic link object. The absolute path to the object in the NT object manager name space can be specified. 
+            It's also possible to create the object relative to an existing object by specified the -Root parameter. If no path is specified than an unnamed object will be created which
+            can only be duplicated by handle.</para>
+            </summary>
+            <example>
+              <code>$obj = New-NtSymbolicLink -TargetPath \Symlink\Target</code>
+              <para>Create a new anonymous symbolic link object.</para>
+            </example>
+            <example>
+              <code>$obj =  New-NtSymbolicLink \DosDevices\ABC \Symlink\Target</code>
+              <para>Create a new symbolic link object with an absolute path.</para>
+            </example>
+            <example>
+              <code>$root = Get-NtDirectory \DosDevices&#x0A;$obj = New-NtSymbolicLink ABC \Symlink\Target -Root $root</code>
+              <para>Create a new symbolic link object with a relative path.
+              </para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="M:NtObjectManager.NewNtSymbolicLinkCmdlet.CanCreateDirectories">
+            <summary>
+            Determine if the cmdlet can create objects.
+            </summary>
+            <returns>True if objects can be created.</returns>
+        </member>
+        <member name="P:NtObjectManager.NewNtSymbolicLinkCmdlet.TargetPath">
+            <summary>
+            <para type="description">Specify the target NT object manager path to follow if processing this symbolic link.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NewNtSymbolicLinkCmdlet.CreateObject(NtApiDotNet.ObjectAttributes)">
+            <summary>
+            Method to create an object from a set of object attributes.
+            </summary>
+            <param name="obj_attributes">The object attributes to create/open from.</param>
+            <returns>The newly created object.</returns>
+        </member>
+        <member name="T:NtObjectManager.NtDirectoryEntry">
+            <summary>
+            A class representing a NT object manager directory entry.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.Name">
+            <summary>
+            Get the name of the entry.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.TypeName">
+            <summary>
+            Get the NT type name of the entry.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.IsDirectory">
+            <summary>
+            Indicates if this entry is a directory.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.IsSymbolicLink">
+            <summary>
+            Indicates if this entry is a symbolic link.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.RelativePath">
+            <summary>
+            The relative path from the drive base to the entry.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.SecurityDescriptor">
+            <summary>
+            The security descriptor of the entry. This can be null if caller does not have permission to open the actual object.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.SymbolicLinkTarget">
+            <summary>
+            The symbolic link target if IsSymbolicLink is true. Can be null if caller doesn't have permission to open the actual object.
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.NtDirectoryEntry.MaximumGrantedAccess">
+            <summary>
+            The maximum granted access to the entry. Can be set to 0 if the caller doesn't have permission to open the actual object.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtDirectoryEntry.ToObject">
+            <summary>
+            Try and open the directory entry and return an actual NtObject handle.
+            </summary>
+            <returns>The object opened.</returns>
+            <exception cref="T:NtApiDotNet.NtException">Thrown if error opening object.</exception>
+            <exception cref="T:System.ArgumentException">Thrown if invalid typename.</exception>
+        </member>
+        <member name="T:NtObjectManager.NtObjectManagerProvider">
+            <summary>
+            Object manager provider.
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.InitializeDefaultDrives">
+            <summary>
+            Overridden method to initialize default drives.
+            </summary>
+            <returns>The list of default drives.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.NewDrive(System.Management.Automation.PSDriveInfo)">
+            <summary>
+            Overridden method to create a new drive.
+            </summary>
+            <param name="drive">The template drive info.</param>
+            <returns>The new drive info.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.RemoveDrive(System.Management.Automation.PSDriveInfo)">
+            <summary>
+            Overridden method to remove a drive.
+            </summary>
+            <param name="drive">The drive to remove.</param>
+            <returns>The removed drive.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.IsValidPath(System.String)">
+            <summary>
+            Overridden method to check if path is valid.
+            </summary>
+            <param name="path">The path to check.</param>
+            <returns>True if the path is valid.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.ItemExists(System.String)">
+            <summary>
+            Overriden method to check if an item exists.
+            </summary>
+            <param name="path">The drive path to check.</param>
+            <returns>True if the item exists.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.IsItemContainer(System.String)">
+            <summary>
+            Overidden method to check if an item is a container.
+            </summary>
+            <param name="path">The drive path to check.</param>
+            <returns>True if the item is a container.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.GetChildItems(System.String,System.Boolean)">
+            <summary>
+            Overridden method to get the child items of a path.
+            </summary>
+            <param name="path">The drive path.</param>
+            <param name="recurse">True if the path should be enumerated recursively.</param>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.GetChildNames(System.String,System.Management.Automation.ReturnContainers)">
+            <summary>
+            Overridden method to get the child item names of a path.
+            </summary>
+            <param name="path">The drive path.</param>
+            <param name="returnContainers">Return containers.</param>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.GetItem(System.String)">
+            <summary>
+            Overridden method to get the item from a path.
+            </summary>
+            <param name="path">The drive path.</param>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.ExpandPath(System.String)">
+            <summary>
+            Overidden method expand a wildcard in a path.
+            </summary>
+            <param name="path">The drive path with wildcards.</param>
+            <returns>The list of expanded paths.</returns>
+        </member>
+        <member name="M:NtObjectManager.NtObjectManagerProvider.NewItem(System.String,System.String,System.Object)">
+            <summary>
+            Overridden method to create a new item.
+            </summary>
+            <param name="path">The drive path to create.</param>
+            <param name="itemTypeName">The NT object type to create.</param>
+            <param name="newItemValue">Additional item value data.</param>
+        </member>
+        <member name="T:NtObjectManager.StartNtObjectWait">
+            <summary>
+            <para type="synopsis">Wait on one or more NT objects to become signalled.</para>
+            <para type="description">This cmdlet allows you to issue a wait on one or more NT objects until they become signalled.
+            This is used for example to acquire a Mutant, decrement a Semaphore or wait for a Process to exit. The timeout
+            value is a combination of all the allowed time parameters, e.g. if you specify 1 second and 1000 milliseconds it will
+            actually wait 2 seconds in total. Specifying -Infinite overrides the time parameters and will wait indefinitely.</para>
+            </summary>
+            <example>
+              <code>$ev = Get-NtEvent \BaseNamedObjects\ABC&#x0A;Start-NtWait $ev -Seconds 10</code>
+              <para>Get an event and wait for 10 seconds for it to be signalled.</para>
+            </example>
+            <example>
+              <code>$ev = Get-NtEvent \BaseNamedObjects\ABC&#x0A;$ev | Start-NtWait -Infinite</code>
+              <para>Get an event and wait indefinitely for it to be signalled.</para>
+            </example>
+            <example>
+              <code>$ev = Get-NtEvent \BaseNamedObjects\ABC&#x0A;$ev | Start-NtWait -Infinite -Alertable</code>
+              <para>Get an event and wait indefinitely for it to be signalled or alerted.</para>
+            </example>
+            <example>
+              <code>$evs = @($ev1, $ev2)$&#x0A;Start-NtWait $evs -WaitAll -Seconds 100</code>
+              <para>Get a list of events and wait 100 seconds for all events to be signalled.</para>
+            </example>
+            <para type="link">about_ManagingNtObjectLifetime</para>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Objects">
+            <summary>
+            <para type="description">Specify a list of objects to wait on.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Seconds">
+            <summary>
+            <para type="description">Specify a wait time in seconds.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.MilliSeconds">
+            <summary>
+            <para type="description">Specify a wait time in milliseconds.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Minutes">
+            <summary>
+            <para type="description">Specify a wait time in minutes.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Hours">
+            <summary>
+            <para type="description">Specify a wait time in hours.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Infinite">
+            <summary>
+            <para type="description">Specify an infinite wait time.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.Alertable">
+            <summary>
+            <para type="description">Specify the wait should be alertable.</para>
+            </summary>
+        </member>
+        <member name="P:NtObjectManager.StartNtObjectWait.WaitAll">
+            <summary>
+            <para type="description">Specify a multiple object wait should exit only when all objects becomes signalled.</para>
+            </summary>
+        </member>
+        <member name="M:NtObjectManager.StartNtObjectWait.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord method.
+            </summary>
+        </member>
+        <member name="T:NtApiDotNet.GetNtSidCmdlet">
+            <summary>
+            <para type="synopsis">Get a SID using various different mechanisms.</para>
+            <para type="description">This cmdlet will create a SID object based on one
+            of many mechanisms. For example it can parse the SDDL representation of the
+            SID, or it can look up the account name. It can also create a SID based on
+            a service name or integerity level.
+            </para>
+            </summary>
+            <example>
+              <code>Get-NtSid BA</code>
+              <para>Gets the Sid for the builtin administrators group based on the SDDL form.</para>
+            </example>
+            <example>
+              <code>Get-NtSid S-1-2-3-4-5</code>
+              <para>Gets the Sid S-1-2-3-4-5 from its SDDL form.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -Name domain\user</code>
+              <para>Gets the Sid for the username 'user' in domain 'domain'.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -Name BUILTIN\Administrators</code>
+              <para>Gets the Sid for the the builtin administrators group.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -ServiceName service</code>
+              <para>Gets the Sid for service name 'service'.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -IntegrityLevel Low</code>
+              <para>Gets the Sid Low integrity level.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -IntegrityLevelRaw 1234</code>
+              <para>Gets the Sid for the arbitrary integrity level 1234.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -PackageName some.package.name</code>
+              <para>Gets the Sid for App Container package name 'some.package.name'.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -PackageName some.package.name -RestrictedPackageName restricted</code>
+              <para>Gets the Sid for App Container package name 'some.package.name' with the restricted name 'restricted'</para>
+            </example>
+            <example>
+              <code>Get-NtSid -KnownSid BuiltinAdministrators</code>
+              <para>Gets the Sid for the builtin administrators group.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -Token</code>
+              <para>Gets the Sid for the current user.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -Token -LogonGroup</code>
+              <para>Gets the Sid for the current default logon group.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -CapabilityName internetClient</code>
+              <para>Gets the capability Sid the internetClient capability.</para>
+            </example>
+            <example>
+              <code>Get-NtSid -CapabilityName internetClient -CapabilityGroup</code>
+              <para>Gets the capability group Sid the internetClient capability.</para>
+            </example>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.Sddl">
+            <summary>
+            <para type="description">Specify a SID using an SDDL string.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.Name">
+            <summary>
+            <para type="description">Lookup a SID using an NT account name.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.ServiceName">
+            <summary>
+            <para type="description">Create a SID based on a service name.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.IntegrityLevel">
+            <summary>
+            <para type="description">Create a SID based on the standard set of integrity levels.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.IntegrityLevelRaw">
+            <summary>
+            <para type="description">Create a SID based on a raw integerity level.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.PackageName">
+            <summary>
+            <para type="description">Create a SID from App Container package name.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.RestrictedPackageName">
+            <summary>
+            <para type="description">Specify an additional restricted name for the package SID.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.KnownSid">
+            <summary>
+            <para type="description">Get a known SID.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.Token">
+            <summary>
+            <para type="description">Get the SID from the current user token. Defaults to the user SID.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.Owner">
+            <summary>
+            <para type="description">Get the SID for the current default owner.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.PrimaryGroup">
+            <summary>
+            <para type="description">Get the SID for the current default group.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.LogonGroup">
+            <summary>
+            <para type="description">Get the SID for the current login group.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.AppContainer">
+            <summary>
+            <para type="description">Get the SID for the current package (if an App Container token).</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.Label">
+            <summary>
+            <para type="description">Get the SID for the current integrity level.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.CapabilityName">
+            <summary>
+            <para type="description">Create a SID from App Container capability name.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.CapabilityGroup">
+            <summary>
+            <para type="description">Returns the group capability SID rather than normal capability SID.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.SecurityAuthority">
+            <summary>
+            <para type="description">Specify a SIDs security authority.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtSidCmdlet.RelativeIdentifiers">
+            <summary>
+            <para type="description">Specify the relative identifiers.</para>
+            </summary>
+        </member>
+        <member name="M:NtApiDotNet.GetNtSidCmdlet.ProcessRecord">
+            <summary>
+            Process record.
+            </summary>
+        </member>
+        <member name="T:NtApiDotNet.GetNtAccessMaskCmdlet">
+            <summary>
+            <para type="synopsis">Convert a specific object access to an AccessMask or GenericAccess.</para>
+            <para type="description">This cmdlet allows you to convert a specific object access to an
+            AccessMask or GenericAccess for use in general functions.</para>
+            </summary>
+            <example>
+              <code>Get-NtAccessMask -Process DupHandle</code>
+              <para>Get the Process DupHandle access right as an AccessMask</para>
+            </example>
+            <example>
+              <code>Get-NtAccessMask -Process DupHandle -ToGenericAccess</code>
+              <para>Get the Process DupHandle access right as a GenericAccess value</para>
+            </example>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.AccessMask">
+            <summary>
+            <para type="description">Specify a raw access mask.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.ToGenericAccess">
+            <summary>
+            <para type="description">Return access as GenericAccess.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.ToSpecificAccess">
+            <summary>
+            <para type="description">Return access as specific access type based on the NtType.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.MapGenericRights">
+            <summary>
+            <para type="description">Specify that any generic rights should be mapped to type specific rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.FileAccess">
+            <summary>
+            <para type="description">Specify File access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.FileDirectoryAccess">
+            <summary>
+            <para type="description">Specify File Directory access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.IoCompletionAccess">
+            <summary>
+            <para type="description">Specify IO Completion access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.MutantAccess">
+            <summary>
+            <para type="description">Specify Mutant access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.SemaphoreAccess">
+            <summary>
+            <para type="description">Specify Semaphore access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.RegistryTransactionAccess">
+            <summary>
+            <para type="description">Specify Registry Transaction access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.AlpcPortAccess">
+            <summary>
+            <para type="description">Specify ALPC Port access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.SectionAccess">
+            <summary>
+            <para type="description">Specify Section access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.KeyAccess">
+            <summary>
+            <para type="description">Specify Key access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.EventAccess">
+            <summary>
+            <para type="description">Specify Event access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.SymbolicLinkAccess">
+            <summary>
+            <para type="description">Specify Symbolic Link access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.TokenAccess">
+            <summary>
+            <para type="description">Specify Token access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.GenericAccess">
+            <summary>
+            <para type="description">Specify Generic access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.DirectoryAccess">
+            <summary>
+            <para type="description">Specify Directory access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.ThreadAccess">
+            <summary>
+            <para type="description">Specify Thread access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.DebugObjectAccess">
+            <summary>
+            <para type="description">Specify Debug Object access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.JobAccess">
+            <summary>
+            <para type="description">Specify Job access rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtAccessMaskCmdlet.ProcessAccess">
+            <summary>
+            <para type="description">Specify Process access rights.</para>
+            </summary>
+        </member>
+        <member name="M:NtApiDotNet.GetNtAccessMaskCmdlet.ProcessRecord">
+            <summary>
+            Overridden ProcessRecord
+            </summary>
+        </member>
+        <member name="T:NtApiDotNet.GetNtGrantedAccessCmdlet">
+            <summary>
+            <para type="synopsis">Gets the granted access to a security descriptor or object.</para>
+            <para type="description">This cmdlet allows you to determine the granted access to a particular
+            resource through a security descriptor or a reference to an object.</para>
+            </summary>
+            <example>
+              <code>Get-NtGrantedAccess $sd -Type $(Get-NtType File)</code>
+              <para>Get the maximum access for a security descriptor for a file object.</para>
+            </example>
+            <example>
+              <code>Get-NtGrantedAccess -Sddl "O:BAG:BAD:(A;;GA;;;WD)" -Type $(Get-NtType Process)</code>
+              <para>Get the maximum access for a security descriptor for a process object based on an SDDL string.</para>
+            </example>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.SecurityDescriptor">
+            <summary>
+            <para type="description">Specify a security descriptor.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.Sddl">
+            <summary>
+            <para type="description">Specify a security descriptor in SDDL format.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.Type">
+            <summary>
+            <para type="description">Specify the NT type for the access check.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.AccessMask">
+            <summary>
+            <para type="description">Specify an access mask to check against. If not specified will request maximum access.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.Object">
+            <summary>
+            <para type="description">Specify a kernel object to get security descriptor from.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.Token">
+            <summary>
+            <para type="description">Specify a token object to do the access check against. If not specified then current token is used.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.MapToGeneric">
+            <summary>
+            <para type="description">Specify whether to map the access mask back to generic rights.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.ConvertToString">
+            <summary>
+            <para type="description">Specify whether to return a string rather than an enumeration value.</para>
+            </summary>
+        </member>
+        <member name="P:NtApiDotNet.GetNtGrantedAccessCmdlet.Principal">
+            <summary>
+            <para type="description">Specify a principal SID to user when checking security descriptors with SELF SID.</para>
+            </summary>
+        </member>
+        <member name="M:NtApiDotNet.GetNtGrantedAccessCmdlet.#ctor">
+            <summary>
+            Constructor.
+            </summary>
+        </member>
+        <member name="M:NtApiDotNet.GetNtGrantedAccessCmdlet.ProcessRecord">
+            <summary>
+            Overridden process record method.
+            </summary>
+        </member>
+    </members>
+</doc>

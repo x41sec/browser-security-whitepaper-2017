@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\CheckDeviceAccess.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\CheckDeviceAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\CheckDeviceAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\obj\Debug\CheckDeviceAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\obj\Debug\CheckDeviceAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckDeviceAccess\obj\Debug\CheckDeviceAccess.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\bin\Debug\DumpExeManifest.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\bin\Debug\DumpExeManifest.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\obj\Debug\DumpExeManifest.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\obj\Debug\DumpExeManifest.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\DumpExeManifest\obj\Debug\DumpExeManifest.pdb

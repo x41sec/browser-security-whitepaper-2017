@@ -1,0 +1,12 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <!--
+        Indicates that, by default, XmlDoc2CmdletDoc should not run in strict mode.
+        Projects that wish to use strict mode should add the following to their
+        project file within a <PropertyGroup/> element:
+
+        <XmlDoc2CmdletDocStrict>true</XmlDoc2CmdletDocStrict>
+        -->
+        <XmlDoc2CmdletDocStrict Condition="'$(XmlDoc2CmdletDocStrict)' == ''">false</XmlDoc2CmdletDocStrict>
+    </PropertyGroup>
+</Project>

@@ -1,0 +1,17 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\TokenViewer.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\TokenViewer.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\TokenViewer.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\ManagedHandleUtils.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\ManagedHandleUtils.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.AddSidForm.resources
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.CreateSandboxTokenForm.resources
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.MainForm.resources
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.Properties.Resources.resources
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.TokenForm.resources
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.csproj.GenerateResource.Cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\TokenViewer\obj\Debug\TokenViewer.pdb

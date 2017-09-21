@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\CheckFileAccess.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\CheckFileAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\CheckFileAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\obj\Debug\CheckFileAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\obj\Debug\CheckFileAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckFileAccess\obj\Debug\CheckFileAccess.csprojResolveAssemblyReference.cache

@@ -1,0 +1,6 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\bin\Debug\NtApiDotNet.XML
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\obj\Debug\NtApiDotNet.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\obj\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\NtApiDotNet\obj\Debug\NtApiDotNet.pdb

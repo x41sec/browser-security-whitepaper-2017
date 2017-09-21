@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    open("about:flags", "_blank");
+    open("http://www.adobe.com/content/dam/Adobe/en/devnet/acrobat/pdfs/pdf_open_parameters.pdf", "_blank");
+    open("http://get.adobe.com/flashplayer/about/", "_blank");
+    open("https://get.webgl.org/", "_blank");
+    open("http://localhost:28876/blank.html", "_blank");
+    // Run a function repeatedly to get it optimized (== compiled) out of process in Edge
+    function fToBeOptimized(u) {
+      return u + 1;
+    };
+    for (var u = 0; u < 10000; u++) {
+      fToBeOptimized(u);
+    };
+  </script>
+</html>

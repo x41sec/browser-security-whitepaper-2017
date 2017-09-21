@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\CheckNetworkAccess.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\CheckNetworkAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\CheckNetworkAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\obj\Debug\CheckNetworkAccess.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\obj\Debug\CheckNetworkAccess.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\CheckNetworkAccess\obj\Debug\CheckNetworkAccess.csprojResolveAssemblyReference.cache

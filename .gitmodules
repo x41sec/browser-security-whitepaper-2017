@@ -1,0 +1,12 @@
+[submodule "Tools/Sandboxing/BugId"]
+	path = Tools/Sandboxing/BugId
+	url = https://github.com/SkyLined/BugId
+[submodule "Tools/Sandboxing/cBugId"]
+	path = Tools/Sandboxing/cBugId
+	url = https://github.com/SkyLined/cBugId
+[submodule "Tools/Sandboxing/FileSystem"]
+	path = Tools/Sandboxing/FileSystem
+	url = https://github.com/SkyLined/FileSystem
+[submodule "Tools/Sandboxing/Kill"]
+	path = Tools/Sandboxing/Kill
+	url = https://github.com/SkyLined/Kill

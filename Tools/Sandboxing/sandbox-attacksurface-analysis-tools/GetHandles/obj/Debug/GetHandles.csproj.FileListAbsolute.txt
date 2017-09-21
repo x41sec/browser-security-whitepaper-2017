@@ -1,0 +1,12 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\GetHandles.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\GetHandles.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\GetHandles.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\ManagedHandleUtils.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\ManagedHandleUtils.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\obj\Debug\GetHandles.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\obj\Debug\GetHandles.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\GetHandles\obj\Debug\GetHandles.pdb

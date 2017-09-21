@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>NtApiDotNet</title>
+    <authors>James Forshaw</authors>
+    <owners>James Forshaw</owners>
+    <licenseUrl>https://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/google/sandbox-attacksurface-analysis-tools</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A .NET class library to access native NT API system calls</description>
+    <releaseNotes>
+1.1.1
+-----
+* Fix to native protected process creation.
+* Added functions to create native NT processes.
+1.1.0
+-----
+* Removed check tools, excluding CheckNetworkAccess.
+* Added basic Job object cmdlets.
+* Added creation of protected processes in Win32Process.
+* Added service access checking cmdlet.
+* Added get executable manifest cmdlet.
+
+1.0.9
+-----
+* Made New-Win32Process more generic and added support for Win32k filter enable.
+* Added function to capture token from a process using impersonation.
+* Added basic support for Desktop and WindowStation objects using Win32u.dll exports.
+* Added file locking implementation including async.
+* Added hardlink enumeration.
+* Added NTFS stream enumeration.
+* Deprecated most of the old standalone utilities in favour of PS cmdlets.
+
+1.0.8
+-----
+* Added cmdlets to create a kernel memory dump, system environment and licensing.
+* Additional system calls implemented.
+* Added access to secure boot policies and code integrity policies.
+* Made Win32 Process creation more generic and added cmdlet.
+* Added access check by type including SELF SID.
+
+1.0.7
+-----
+* Added new cmdlets to do access checking. Many of the old standalone utilities are now deprecated.
+* Added cmdlets to create lowbox tokens
+* Added list of known capability SIDs and resolve them during name lookup
+* Added cmdlet to get a SID
+* Added cmdlet to do a standalone access checking
+* Reworked the APIs to include non-throwing versions of many of the core Open/Create methods.
+* Made NtType more inspectable, includes access enumeration and rationalizes the opening methods.
+* Various additional properties such as extended process flags, checking for LPAC
+* Rework of access mask handling. Now all low-level APIs use an AccessMask structure which has
+  conversion operators to and from other enumerations.
+* Various other bug fixes.
+
+1.0.6
+-----
+* Added cmdlet to filter a Token object.
+* Cleanups to various components to make them easier to use from PS
+
+1.0.5
+-----
+* Added additional Known SIDs
+* Unified the variant Get-NtToken* cmdlets into one.
+* Added additional token cmdlets such as Logon and Clipboard.
+* Added initial support for IO Completion Ports
+* Added object creation time property
+* Added support to set a process device map
+* Added top level CanSynchronize property to NtObject
+* Bugs fixes from Rustam Agametov
+* Made process list in token viewer a list rather than a tree and made a separate handle tab.
+
+1.0.4
+-----
+* First NUGET release.
+</releaseNotes>
+    <copyright>Copyright Google Inc. 2017</copyright>
+    <tags>syscalls</tags>
+  </metadata>
+</package>

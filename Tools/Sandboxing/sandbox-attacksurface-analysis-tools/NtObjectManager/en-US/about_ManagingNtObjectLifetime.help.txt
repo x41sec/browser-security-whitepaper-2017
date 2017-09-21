@@ -1,0 +1,59 @@
+﻿TOPIC
+	about_ManagingNtObjectLifetime
+
+SHORT DESCRIPTION
+	Various Cmdlets in this library return objects which hold references to system resources. Its 
+	common that resources will need to be left open while operating on them otherwise the kernel will
+	delete them. It's also important to ensure these resources don't leak. The library provides a few 
+	techniques to manage the lifetime of a resource.
+
+LONG DESCRIPTION
+	Almost all the objects returns by the various cmdlets in this library hold open a reference to a
+	system resource, typically a handle to a kernel object. Managing these resources are important, both
+	to ensure a resource is accessible during its required lifetime as well cleaning up afterwards.
+
+	When you create a named resource (e.g. New-NtDirectory \Some\Path) the name only lasts as long as the
+	last handle to that resource exists. If you assign it to a script variable then it should persist,
+	however if you don't then eventually the garbage collector will pick it up and finalize, removing the name.
+	This makes it difficult to use pipelines to create a run of new objects. For that reason the majority of
+	the New-Nt* commands takes the -CreateDirectories parameter. When this is specified the cmdlet will
+	automatically create new object directories as appropriate to make the final object. These directories
+	are returned in a list with the new object, the new object is at the head of the list. You now have
+	all the objects necessary for as long as they're required.
+
+	If you don't need to maintain a reference to a directory object (for example it already exists) then
+	instead you can use the -CloseRoot parameter. This will close the -Root object (which is passed in
+	the pipeline) once the new object has been created.
+
+	The final lifetime management technique is by using Use-NtObject. This cmdlet takes an input object
+	(which can be from the pipeline) and executes a ScriptBlock with that object. Once the ScriptBlock
+	completes the input object will be disposed of. It can be used for NtObjects but also for anything
+	which implements IDisposable such as FileStream instances. It will also dispose enumerations of 
+	IDisposable	objects.
+
+EXAMPLES
+	Example 1: Create a new event with a nested directory.
+
+	$ev = New-NtEvent \BaseNamedObjects\ABC\XYZ\EventName -CreateDirectories	
+	try {
+	  # Print out created event
+	  $ev[0] | Format-List
+	} finally {
+	  # Dispose objects
+	  $ev.Dispose()
+	}
+	
+	Example 2: Manage lifetime in a pipeline using -CloseRoot.
+	$software_key = Get-NtKey \Registry\Machine\Software | New-NtKey MyKey -CloseRoot
+	# Key object to \Registry\Machine\Software is automatically closed.
+
+	Example 3: Using Use-NtObject to automatically close a list of processes
+	$pinfo = Use-NtObject($ps = Get-NtProcess) { $ps | select Name, CommandLine }
+	# $ps is now disposed of.
+
+	Example 4: Same as 3 but not polluting the variable namespace
+	$pinfo = Use-NtObject (Get-NtProcess) { param($ps); $ps | select Name, CommandLine }
+	# $ps no longer in scope
+
+KEYWORDS
+	ObjectManager, Lifetime

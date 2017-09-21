@@ -1,0 +1,10 @@
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\ObjectList.exe.config
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\ObjectList.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\ObjectList.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\NDesk.Options.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\NtApiDotNet.dll
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\NtApiDotNet.pdb
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\bin\Debug\NtApiDotNet.xml
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\obj\Debug\ObjectList.csprojResolveAssemblyReference.cache
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\obj\Debug\ObjectList.exe
+U:\Tools\Sandbox\sandbox-attacksurface-analysis-tools\ObjectList\obj\Debug\ObjectList.pdb
